@@ -1,8 +1,11 @@
+from concurrent import futures
 from urllib import request
 import collections
+import functools
 import json
 import logging
 import random
+import sys
 import urllib
 
 logging.basicConfig(
@@ -22,6 +25,7 @@ class Nessus(object):
 
   def __init__(self):
     self._session_token = None
+    self._executor = futures.ThreadPoolExecutor(max_workers=1)
 
   def _BuildRequest(self, path, data=None):
     request = urllib.request.Request(HOST + path + '?json=1')
@@ -50,46 +54,88 @@ class Nessus(object):
       raise NessusError('Status was not OK: %s' % status)
     return json_resp['contents']
 
-  def Login(self, login, password):
+  def Login(self, login, password, callback=None):
     data = {
       'login': login,
       'password': password,
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/login', data)
-    contents = self._SendRequest(request)
+    future = self._executor.submit(self._SendRequest, request)
+    if callback:
+      future.add_done_callback(functools.partial(self._LoginDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      self._LoginDone(callback, future)
 
+  def _LoginDone(self, callback, future):
+    contents = future.result()
     self._session_token = contents['token']
     logging.debug('Token is %s', self._session_token)
+    if callback:
+      callback('Successully connected to Nessus')
 
-  def Logout(self):
+  def _SimpleReturnCB(self, callback, future):
+    if callback:
+      callback(future.result())
+    else:
+      return future.result()
+
+  def Logout(self, callback=None):
     data = {
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/logout', data)
-    contents = self._SendRequest(request)
-    return contents
+    future = self._executor.submit(self._SendRequest, request)
+    if callback:
+      future.add_done_callback(functools.partial(self._SimpleReturnCB, callback))
+      return future
+    else:
+      futures.wait([future])
+      self._SimpleReturnCB(callback, future)
 
-  def Feed(self):
+  def Feed(self, callback=None):
     data = {
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/feed', data)
-    contents = self._SendRequest(request)
-    return contents
+    future = self._executor.submit(self._SendRequest, request)
+    if callback:
+      future.add_done_callback(functools.partial(self._SimpleReturnCB, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._SimpleReturnCB(callback, future)
 
-  def ListServerSettings(self):
+  def ListServerSettings(self, callback=None):
     data = {
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/server/securesettings/list', data)
-    contents = self._SendRequest(request)
-    return contents.get('securesettings')
+    future = self._executor.submit(self._SendRequest, request)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ListServerSettingsDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ListServerSettingsDone(callback, future)
+
+  def _ListServerSettingsDone(self, callback, future):
+    contents = future.result()
+    settings = contents.get('securesettings')
+    if callback:
+      callback(settings)
+    else:
+      return settings
 
 
 if __name__ == '__main__':
   nessus = Nessus()
+  def callback(status):
+    logging.info('Future finished: %s', status)
   nessus.Login('admin', 'simplerpass')
-  # logging.info('Feed info: %s', nessus.Feed())
-  # logging.info('Server settings list: %s', nessus.ListServerSettings())
-  logging.info('Logout: %s', nessus.Logout())
+  logging.info('Feed: %s', nessus.Feed())
+  nessus.ListServerSettings()
+  nessus.Logout()
