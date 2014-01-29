@@ -1,11 +1,21 @@
+"""Library to talk with a remote Nessus 5 server that via its xmlrpc interface,
+
+Methods mirror what is in the official API at
+file:///C:/Users/Tmu/Desktop/nessus/nessus_5.0_XMLRPC_protocol_guide.pdf
+
+Example usage:
+  nessus = Nessus('127.0.0.1:8443')
+  nessus.Login('admin', 'pass$%&(#'%#[]@:')
+  logging.info('Feeds: %s', nessus.Feed())
+  nessus.Logout()
+"""
+
 from concurrent import futures
 from urllib import request
-import collections
 import functools
 import json
 import logging
 import random
-import sys
 import urllib
 
 logging.basicConfig(
@@ -22,10 +32,21 @@ class NessusError(Exception):
 
 
 class Nessus(object):
+  """Class to communicate with the remote nessus 5 instance.
+  All methods support both synchronous and asynchronous calls.
+  """
 
-  def __init__(self):
+  def __init__(self, host, executor=None):
+    self._host = host
     self._session_token = None
-    self._executor = futures.ThreadPoolExecutor(max_workers=1)
+    self._executor = executor or futures.ThreadPoolExecutor(max_workers=1)
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, type, value, traceback):
+    if self._session_token:
+      self.Logout()
 
   def _BuildRequest(self, path, data=None):
     request = urllib.request.Request(HOST + path + '?json=1')
@@ -130,12 +151,26 @@ class Nessus(object):
     else:
       return settings
 
+  def PluginsDescriptions(self, callback=None):
+    data = {
+      'seq': random.randint(1, MAX_SEQ),
+    }
+    request = self._BuildRequest('/plugins/descriptions', data)
+    future = self._executor.submit(self._SendRequest, request)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._SimpleReturnCB, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._SimpleReturnCB(callback, future)
+
 
 if __name__ == '__main__':
-  nessus = Nessus()
   def callback(status):
     logging.info('Future finished: %s', status)
-  nessus.Login('admin', 'simplerpass')
-  logging.info('Feed: %s', nessus.Feed())
-  nessus.ListServerSettings()
-  nessus.Logout()
+  with Nessus(HOST) as nessus:
+    nessus.Login('admin', 'simplerpass')
+    #logging.info('Feed: %s', nessus.Feed())
+    logging.info('Server settings: %s', nessus.ListServerSettings())
+    # plugins = nessus.PluginsDescriptions()
