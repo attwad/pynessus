@@ -39,7 +39,7 @@ class Nessus(object):
   def __init__(self, host, executor=None):
     self._host = host
     self._session_token = None
-    self._executor = executor or futures.ThreadPoolExecutor(max_workers=1)
+    self._executor = executor or futures.ThreadPoolExecutor(max_workers=5)
 
   def __enter__(self):
     return self
@@ -55,7 +55,7 @@ class Nessus(object):
     if data:
       data = urllib.parse.urlencode(data)
       data = data.encode('utf-8')
-      request.add_data(data)
+      request.data = data
     if self._session_token:
       # TODO: dangerous.
       request.add_header('Cookie', 'token=%s' % self._session_token)
@@ -64,7 +64,7 @@ class Nessus(object):
   @staticmethod
   def _SendRequest(request):
     logging.debug('Sending request to %s with data %s',
-        request.get_full_url(), request.get_data())
+        request.get_full_url(), request.data)
     resp = urllib.request.urlopen(request)
     url_info = resp.info()
     encoding = url_info.get('Content-Encoding', 'utf-8')
@@ -110,11 +110,21 @@ class Nessus(object):
     request = self._BuildRequest('/logout', data)
     future = self._executor.submit(self._SendRequest, request)
     if callback:
-      future.add_done_callback(functools.partial(self._SimpleReturnCB, callback))
+      future.add_done_callback(functools.partial(self._LogoutDone, callback))
       return future
     else:
       futures.wait([future])
-      self._SimpleReturnCB(callback, future)
+      self._LogoutDone(callback, future)
+
+  def _LogoutDone(self, callback, future):
+    self._session_token = None
+    logging.debug('Token is %s', self._session_token)
+    if callback:
+      callback('Successully connected to Nessus')
+    
+  @property
+  def is_logged_in(self):
+    return self._session_token is not None
 
   def Feed(self, callback=None):
     data = {
