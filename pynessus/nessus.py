@@ -182,6 +182,6 @@ if __name__ == '__main__':
     logging.info('Future finished: %s', status)
   with Nessus(HOST) as nessus:
     nessus.Login('admin', 'simplerpass')
-    #logging.info('Feed: %s', nessus.Feed())
+    logging.info('Feed: %s', nessus.Feed())
     logging.info('Server settings: %s', nessus.ListServerSettings())
     # plugins = nessus.PluginsDescriptions()

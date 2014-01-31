@@ -9,6 +9,7 @@ from concurrent import futures
 
 from pynessus import nessus
 
+@mock.patch.object(urllib.request, 'urlopen')
 class TestNessus(unittest.TestCase):
 
   def setUp(self):
@@ -34,13 +35,11 @@ class TestNessus(unittest.TestCase):
           '',
           status_code)
 
-  @mock.patch.object(urllib.request, 'urlopen')
   def test_login(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile('login_ok')
     self._nessus.Login('test', 'pass')
     self.assertTrue(self._nessus.is_logged_in)
 
-  @mock.patch.object(urllib.request, 'urlopen')
   def test_login_async(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile('login_ok')
     callback = mock.Mock(return_value=None)
@@ -49,7 +48,6 @@ class TestNessus(unittest.TestCase):
     self.assertTrue(self._nessus.is_logged_in)
     self.assertTrue(future.done())
 
-  @mock.patch.object(urllib.request, 'urlopen')
   def test_with_logout(self, mock_urlopen):
     logout_resp = {'reply': {'seq': '170692039', 'status': 'OK'}}
     mock_urlopen.side_effect = [
@@ -58,6 +56,40 @@ class TestNessus(unittest.TestCase):
     with nessus.Nessus('host:port') as nes:
       nes.Login('user', 'pass')
     self.assertEquals(2, mock_urlopen.call_count)
+
+  def test_list_serversettings(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile(
+        'server_securesettings_list_ok')
+    settings = self._nessus.ListServerSettings()
+    self.assertEquals({
+        'proxysettings': {
+            'custom_host': None,
+            'proxy': None,
+            'proxy_password': None,
+            'proxy_port': None,
+            'proxy_username': None,
+            'user_agent': None
+        }
+    }, settings)
+
+  def test_feed(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('feed_ok')
+    feed = self._nessus.Feed()
+    self.assertEquals({
+        'diff': 'on',
+        'expiration': '1548009584',
+        'expiration_time': '1814',
+        'feed': 'HomeFeed',
+        'loaded_plugin_set': '201401211115',
+        'msp': 'FALSE',
+        'nessus_type': 'Nessus Home',
+        'nessus_ui_version': '2.1.0',
+        'plugin_rules': 'on',
+        'report_email': 'on',
+        'server_version': '5.2.5',
+        'tags': 'on',
+        'web_server_version': '5.0.0 (Build H20130829A)',
+    }, feed)
 
 
 if __name__ == "__main__":

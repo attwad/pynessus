@@ -1,0 +1,18 @@
+{
+    "reply": {
+        "contents": {
+            "securesettings": {
+                "proxysettings": {
+                    "custom_host": null,
+                    "proxy": null,
+                    "proxy_password": null,
+                    "proxy_port": null,
+                    "proxy_username": null,
+                    "user_agent": null
+                }
+            }
+        },
+        "seq": "2009810762",
+        "status": "OK"
+    }
+}

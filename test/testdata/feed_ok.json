@@ -1,0 +1,21 @@
+{
+    "reply": {
+        "contents": {
+            "diff": "on",
+            "expiration": "1548009584",
+            "expiration_time": "1814",
+            "feed": "HomeFeed",
+            "loaded_plugin_set": "201401211115",
+            "msp": "FALSE",
+            "nessus_type": "Nessus Home",
+            "nessus_ui_version": "2.1.0",
+            "plugin_rules": "on",
+            "report_email": "on",
+            "server_version": "5.2.5",
+            "tags": "on",
+            "web_server_version": "5.0.0 (Build H20130829A)"
+        },
+        "seq": "1277599892",
+        "status": "OK"
+    }
+}
