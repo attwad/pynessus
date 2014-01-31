@@ -68,8 +68,9 @@ class Nessus(object):
     resp = urllib.request.urlopen(request)
     url_info = resp.info()
     encoding = url_info.get('Content-Encoding', 'utf-8')
-    json_resp = json.loads(resp.read().decode(encoding))['reply']
-    logging.debug('urlopen returned %s', json_resp)
+    raw_json = resp.read().decode(encoding)
+    logging.debug('urlopen returned \n%s\n', raw_json)
+    json_resp = json.loads(raw_json)['reply']
     status = json_resp.get('status', '')
     if status != 'OK':
       raise NessusError('Status was not OK: %s' % status)

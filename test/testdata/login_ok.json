@@ -1,0 +1,20 @@
+{
+    "reply": {
+        "contents": {
+            "idle_timeout": "30",
+            "loaded_plugin_set": "201401211115",
+            "msp": "FALSE",
+            "plugin_set": "201401211115",
+            "scanner_boottime": "1391194522",
+            "server_uuid": "90936cf4-e94d-833c-c5d6-b50d941a2fb86bfbd6059081a72c",
+            "token": "0aae29dfb8a55d0c80d1e4e09c52a56653f3979d0185dc05",
+            "user": {
+                "admin": "TRUE",
+                "idx": "21232f297a57a5a743894a0e4a801fc3",
+                "name": "admin"
+            }
+        },
+        "seq": "1108436850",
+        "status": "OK"
+    }
+}
