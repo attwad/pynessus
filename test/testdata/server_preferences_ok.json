@@ -1,0 +1,176 @@
+{
+    "reply": {
+        "contents": {
+            "serverpreferences": {
+                "preference": [
+                    {
+                        "name": "allow_post_scan_editing",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "auto_enable_dependencies",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "auto_update",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "auto_update_delay",
+                        "value": "24"
+                    },
+                    {
+                        "name": "cgi_path",
+                        "value": "/cgi-bin:/scripts"
+                    },
+                    {
+                        "name": "checks_read_timeout",
+                        "value": "5"
+                    },
+                    {
+                        "name": "disable_ntp",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "disable_xmlrpc",
+                        "value": "no"
+                    },
+                    {
+                        "name": "dumpfile",
+                        "value": "C:\\ProgramData\\Tenable\\Nessus\\nessus\\logs\\nessusd.dump"
+                    },
+                    {
+                        "name": "global.max_hosts",
+                        "value": "525"
+                    },
+                    {
+                        "name": "global.max_scans",
+                        "value": "0"
+                    },
+                    {
+                        "name": "global.max_simult_tcp_sessions",
+                        "value": "50"
+                    },
+                    {
+                        "name": "global.max_web_users",
+                        "value": "1024"
+                    },
+                    {
+                        "name": "listen_address",
+                        "value": "127.0.0.1"
+                    },
+                    {
+                        "name": "listen_port",
+                        "value": "1241"
+                    },
+                    {
+                        "name": "log_whole_attack",
+                        "value": "no"
+                    },
+                    {
+                        "name": "logfile",
+                        "value": "C:\\ProgramData\\Tenable\\Nessus\\nessus\\logs\\nessusd.messages"
+                    },
+                    {
+                        "name": "max_checks",
+                        "value": "5"
+                    },
+                    {
+                        "name": "max_hosts",
+                        "value": "5"
+                    },
+                    {
+                        "name": "nasl_log_type",
+                        "value": "normal"
+                    },
+                    {
+                        "name": "nasl_no_signature_check",
+                        "value": "no"
+                    },
+                    {
+                        "name": "non_simult_ports",
+                        "value": "139, 445, 3389"
+                    },
+                    {
+                        "name": "optimize_test",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "plugin_upload",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "plugins_timeout",
+                        "value": "320"
+                    },
+                    {
+                        "name": "port_range",
+                        "value": "default"
+                    },
+                    {
+                        "name": "purge_plugin_db",
+                        "value": "no"
+                    },
+                    {
+                        "name": "qdb_mem_usage",
+                        "value": "low"
+                    },
+                    {
+                        "name": "reduce_connections_on_congestion",
+                        "value": "no"
+                    },
+                    {
+                        "name": "report_crashes",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "rules",
+                        "value": "C:\\ProgramData\\Tenable\\Nessus\\conf\\nessusd.rules"
+                    },
+                    {
+                        "name": "safe_checks",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "silent_dependencies",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "slice_network_addresses",
+                        "value": "no"
+                    },
+                    {
+                        "name": "ssl_cipher_list",
+                        "value": "strong"
+                    },
+                    {
+                        "name": "stop_scan_on_disconnect",
+                        "value": "no"
+                    },
+                    {
+                        "name": "stop_scan_on_hang",
+                        "value": "no"
+                    },
+                    {
+                        "name": "throttle_scan",
+                        "value": "yes"
+                    },
+                    {
+                        "name": "www_logfile",
+                        "value": "C:\\ProgramData\\Tenable\\Nessus\\nessus\\logs\\www_server.log"
+                    },
+                    {
+                        "name": "xmlrpc_idle_session_timeout",
+                        "value": "30"
+                    },
+                    {
+                        "name": "xmlrpc_listen_port",
+                        "value": "8443"
+                    }
+                ]
+            }
+        },
+        "seq": "1111840025",
+        "status": "OK"
+    }
+}

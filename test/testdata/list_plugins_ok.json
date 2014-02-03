@@ -1,0 +1,200 @@
+{
+    "reply": {
+        "contents": {
+            "pluginfamilylist": {
+                "family": [
+                    {
+                        "familyname": "Default Unix Accounts",
+                        "numfamilymembers": "86"
+                    },
+                    {
+                        "familyname": "Port scanners",
+                        "numfamilymembers": "6"
+                    },
+                    {
+                        "familyname": "RPC",
+                        "numfamilymembers": "36"
+                    },
+                    {
+                        "familyname": "General",
+                        "numfamilymembers": "164"
+                    },
+                    {
+                        "familyname": "Settings",
+                        "numfamilymembers": "57"
+                    },
+                    {
+                        "familyname": "Junos Local Security Checks",
+                        "numfamilymembers": "71"
+                    },
+                    {
+                        "familyname": "Gentoo Local Security Checks",
+                        "numfamilymembers": "1827"
+                    },
+                    {
+                        "familyname": "Amazon Linux Local Security Checks",
+                        "numfamilymembers": "268"
+                    },
+                    {
+                        "familyname": "Mobile Devices",
+                        "numfamilymembers": "26"
+                    },
+                    {
+                        "familyname": "CISCO",
+                        "numfamilymembers": "417"
+                    },
+                    {
+                        "familyname": "CentOS Local Security Checks",
+                        "numfamilymembers": "1612"
+                    },
+                    {
+                        "familyname": "Red Hat Local Security Checks",
+                        "numfamilymembers": "2802"
+                    },
+                    {
+                        "familyname": "Windows : User management",
+                        "numfamilymembers": "28"
+                    },
+                    {
+                        "familyname": "AIX Local Security Checks",
+                        "numfamilymembers": "11031"
+                    },
+                    {
+                        "familyname": "Scientific Linux Local Security Checks",
+                        "numfamilymembers": "1555"
+                    },
+                    {
+                        "familyname": "Ubuntu Local Security Checks",
+                        "numfamilymembers": "2298"
+                    },
+                    {
+                        "familyname": "Firewalls",
+                        "numfamilymembers": "109"
+                    },
+                    {
+                        "familyname": "Netware",
+                        "numfamilymembers": "14"
+                    },
+                    {
+                        "familyname": "Service detection",
+                        "numfamilymembers": "401"
+                    },
+                    {
+                        "familyname": "Gain a shell remotely",
+                        "numfamilymembers": "268"
+                    },
+                    {
+                        "familyname": "MacOS X Local Security Checks",
+                        "numfamilymembers": "519"
+                    },
+                    {
+                        "familyname": "Misc.",
+                        "numfamilymembers": "675"
+                    },
+                    {
+                        "familyname": "Databases",
+                        "numfamilymembers": "333"
+                    },
+                    {
+                        "familyname": "SMTP problems",
+                        "numfamilymembers": "130"
+                    },
+                    {
+                        "familyname": "HP-UX Local Security Checks",
+                        "numfamilymembers": "1963"
+                    },
+                    {
+                        "familyname": "Windows : Microsoft Bulletins",
+                        "numfamilymembers": "874"
+                    },
+                    {
+                        "familyname": "Oracle Linux Local Security Checks",
+                        "numfamilymembers": "1582"
+                    },
+                    {
+                        "familyname": "SCADA",
+                        "numfamilymembers": "3"
+                    },
+                    {
+                        "familyname": "CGI abuses",
+                        "numfamilymembers": "2796"
+                    },
+                    {
+                        "familyname": "Policy Compliance",
+                        "numfamilymembers": "8"
+                    },
+                    {
+                        "familyname": "Mandriva Local Security Checks",
+                        "numfamilymembers": "2679"
+                    },
+                    {
+                        "familyname": "FTP",
+                        "numfamilymembers": "234"
+                    },
+                    {
+                        "familyname": "SNMP",
+                        "numfamilymembers": "30"
+                    },
+                    {
+                        "familyname": "Windows",
+                        "numfamilymembers": "2610"
+                    },
+                    {
+                        "familyname": "SuSE Local Security Checks",
+                        "numfamilymembers": "5275"
+                    },
+                    {
+                        "familyname": "DNS",
+                        "numfamilymembers": "77"
+                    },
+                    {
+                        "familyname": "Fedora Local Security Checks",
+                        "numfamilymembers": "6623"
+                    },
+                    {
+                        "familyname": "Backdoors",
+                        "numfamilymembers": "95"
+                    },
+                    {
+                        "familyname": "Peer-To-Peer File Sharing",
+                        "numfamilymembers": "68"
+                    },
+                    {
+                        "familyname": "Debian Local Security Checks",
+                        "numfamilymembers": "2834"
+                    },
+                    {
+                        "familyname": "Denial of Service",
+                        "numfamilymembers": "104"
+                    },
+                    {
+                        "familyname": "VMware ESX Local Security Checks",
+                        "numfamilymembers": "85"
+                    },
+                    {
+                        "familyname": "Slackware Local Security Checks",
+                        "numfamilymembers": "660"
+                    },
+                    {
+                        "familyname": "FreeBSD Local Security Checks",
+                        "numfamilymembers": "2391"
+                    },
+                    {
+                        "familyname": "Solaris Local Security Checks",
+                        "numfamilymembers": "3440"
+                    },
+                    {
+                        "familyname": "Web Servers",
+                        "numfamilymembers": "793"
+                    },
+                    {
+                        "familyname": "CGI abuses : XSS",
+                        "numfamilymembers": "532"
+                    }
+                ]
+            }
+        },
+        "seq": "1197807873",
+        "status": "OK"
+    }
+}

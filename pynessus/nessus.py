@@ -76,6 +76,17 @@ class Nessus(object):
       raise NessusError('Status was not OK: %s' % status)
     return json_resp['contents']
 
+  @staticmethod
+  def _SendRawRequest(request):
+    logging.debug('Sending request to %s with data %s',
+        request.get_full_url(), request.data)
+    resp = urllib.request.urlopen(request)
+    url_info = resp.info()
+    encoding = url_info.get('Content-Encoding', 'utf-8')
+    decoded_raw = resp.read().decode(encoding)
+    logging.debug('urlopen returned \n%s\n', decoded_raw)
+    return decoded_raw
+
   def Login(self, login, password, callback=None):
     data = {
       'login': login,
@@ -175,6 +186,101 @@ class Nessus(object):
     else:
       futures.wait([future])
       return self._SimpleReturnCB(callback, future)
+  
+  def ListPreferences(self, callback=None):
+    data = {
+      'seq': random.randint(1, MAX_SEQ),
+    }
+    request = self._BuildRequest('/server/preferences/list', data)
+    future = self._executor.submit(self._SendRequest, request)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ListPreferencesDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ListPreferencesDone(callback, future)
+
+  def _ListPreferencesDone(self, callback, future):
+    contents = future.result()
+    return {
+        pref['name']: pref['value'] for pref in contents[
+            'serverpreferences']['preference']}
+
+  def ServerLoad(self, callback=None):
+    data = {
+      'seq': random.randint(1, MAX_SEQ),
+    }
+    request = self._BuildRequest('/server/load', data)
+    future = self._executor.submit(self._SendRequest, request)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ServerLoadDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ServerLoadDone(callback, future)
+
+  def _ServerLoadDone(self, callback, future):
+    contents = future.result()
+    return contents['load'], contents['platform']
+
+  def ServerUUID(self, callback=None):
+    data = {
+      'seq': random.randint(1, MAX_SEQ),
+    }
+    request = self._BuildRequest('/uuid', data)
+    future = self._executor.submit(self._SendRequest, request)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ServerUUIDDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ServerUUIDDone(callback, future)
+
+  def _ServerUUIDDone(self, callback, future):
+    contents = future.result()
+    return contents['uuid']
+
+  def ServerCert(self, callback=None):
+    data = {
+      'seq': random.randint(1, MAX_SEQ),
+    }
+    request = self._BuildRequest('/getcert', data)
+    future = self._executor.submit(self._SendRawRequest, request)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ServerCertDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ServerCertDone(callback, future)
+
+  def _ServerCertDone(self, callback, future):
+    return future.result()
+
+  def ListPlugins(self, callback=None):
+    data = {
+      'seq': random.randint(1, MAX_SEQ),
+    }
+    request = self._BuildRequest('/plugins/list', data)
+    future = self._executor.submit(self._SendRequest, request)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ListPluginsDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ListPluginsDone(callback, future)
+
+  @staticmethod
+  def _ListPluginsDone(callback, future):
+    contents = future.result()
+    return {
+        family['familyname']: int(family['numfamilymembers'])
+        for family in contents['pluginfamilylist']['family']}
+
 
 
 if __name__ == '__main__':
@@ -182,6 +288,11 @@ if __name__ == '__main__':
     logging.info('Future finished: %s', status)
   with Nessus(HOST) as nessus:
     nessus.Login('admin', 'simplerpass')
-    logging.info('Feed: %s', nessus.Feed())
-    logging.info('Server settings: %s', nessus.ListServerSettings())
-    # plugins = nessus.PluginsDescriptions()
+    #logging.info('Feed: %s', nessus.Feed())
+    #logging.info('Server settings: %s', nessus.ListServerSettings())
+    #plugins = nessus.PluginsDescriptions()
+    #ogging.info(nessus.ListPreferences())
+    #logging.info(nessus.ServerLoad())
+    #logging.info(nessus.ServerUUID())
+    #logging.info(nessus.ServerCert())
+    logging.info(nessus.ListPlugins())

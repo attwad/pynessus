@@ -1,0 +1,16 @@
+{
+    "reply": {
+        "contents": {
+            "load": {
+                "loadavg": "0.00",
+                "num_hosts": "0",
+                "num_scans": "0",
+                "num_sessions": "1",
+                "num_tcp_sessions": "0"
+            },
+            "platform": "WINDOWS"
+        },
+        "seq": "2234655",
+        "status": "OK"
+    }
+}

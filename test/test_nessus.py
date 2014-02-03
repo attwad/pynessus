@@ -91,6 +91,33 @@ class TestNessus(unittest.TestCase):
         'web_server_version': '5.0.0 (Build H20130829A)',
     }, feed)
 
+  def test_list_server_preferences(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile(
+        'server_preferences_ok')
+    preferences = self._nessus.ListPreferences()
+    self.assertEquals(41, len(preferences), preferences)
+
+  def test_server_load(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('server_load_ok')
+    load, platform = self._nessus.ServerLoad()
+    self.assertEquals('WINDOWS', platform)
+    self.assertEquals(5, len(load), load)
+
+  def test_server_uid(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('server_uuid_ok')
+    uuid = self._nessus.ServerUUID()
+    self.assertEquals("90936cf4-e94d-833c-c5d6-b50d941a2fb86bfbd6059081a72c", uuid)
+
+  def test_server_cert(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('server_cert')
+    cert = self._nessus.ServerCert()
+    self.assertTrue('CERTIFICATE' in cert, cert)
+
+  def test_list_plugins(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('list_plugins_ok')
+    plugins = self._nessus.ListPlugins()
+    self.assertEquals(47, len(plugins), plugins)
+
 
 if __name__ == "__main__":
   unittest.main()
