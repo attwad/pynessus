@@ -1,11 +1,12 @@
-import os
+from concurrent import futures
 from unittest import mock
+from urllib import response
+import io
+import json
+import logging
+import os
 import unittest
 import urllib
-import io
-from urllib import response
-import json
-from concurrent import futures
 
 from pynessus import nessus
 
@@ -48,20 +49,33 @@ class TestNessus(unittest.TestCase):
     self.assertTrue(self._nessus.is_logged_in)
     self.assertTrue(future.done())
 
+  def test_invalid_login(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('invalid_login')
+    self.assertRaises(
+        nessus.NessusError,
+        self._nessus.Login, 'test', 'wrongpass')
+    self.assertFalse(self._nessus.is_logged_in)
+
+  def test_login_raises(self, mock_urlopen):
+    mock_urlopen.side_effect = Exception('something went wrong')
+    self.assertRaises(
+        nessus.NessusError,
+        self._nessus.Login, 'test', 'wrongpass')
+    self.assertFalse(self._nessus.is_logged_in)
+
   def test_with_logout(self, mock_urlopen):
-    logout_resp = {'reply': {'seq': '170692039', 'status': 'OK'}}
     mock_urlopen.side_effect = [
         self._ExpectResponseFromFile('login_ok'),
         self._ExpectResponseFromFile('logout_ok')]
     with nessus.Nessus('host:port') as nes:
       nes.Login('user', 'pass')
-    self.assertEquals(2, mock_urlopen.call_count)
+    self.assertEqual(2, mock_urlopen.call_count)
 
   def test_list_serversettings(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile(
         'server_securesettings_list_ok')
     settings = self._nessus.ListServerSettings()
-    self.assertEquals({
+    self.assertEqual({
         'proxysettings': {
             'custom_host': None,
             'proxy': None,
@@ -75,7 +89,7 @@ class TestNessus(unittest.TestCase):
   def test_feed(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile('feed_ok')
     feed = self._nessus.Feed()
-    self.assertEquals({
+    self.assertEqual({
         'diff': 'on',
         'expiration': '1548009584',
         'expiration_time': '1814',
@@ -95,18 +109,18 @@ class TestNessus(unittest.TestCase):
     mock_urlopen.return_value = self._ExpectResponseFromFile(
         'server_preferences_ok')
     preferences = self._nessus.ListPreferences()
-    self.assertEquals(41, len(preferences), preferences)
+    self.assertEqual(41, len(preferences), preferences)
 
   def test_server_load(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile('server_load_ok')
     load, platform = self._nessus.ServerLoad()
-    self.assertEquals('WINDOWS', platform)
-    self.assertEquals(5, len(load), load)
+    self.assertEqual('WINDOWS', platform)
+    self.assertEqual(5, len(load), load)
 
   def test_server_uid(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile('server_uuid_ok')
     uuid = self._nessus.ServerUUID()
-    self.assertEquals("90936cf4-e94d-833c-c5d6-b50d941a2fb86bfbd6059081a72c", uuid)
+    self.assertEqual("90936cf4-e94d-833c-c5d6-b50d941a2fb86bfbd6059081a72c", uuid)
 
   def test_server_cert(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile('server_cert')
@@ -116,26 +130,30 @@ class TestNessus(unittest.TestCase):
   def test_list_plugins(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile('list_plugins_ok')
     plugins = self._nessus.ListPlugins()
-    self.assertEquals(47, len(plugins), plugins)
+    self.assertEqual(47, len(plugins), plugins)
 
   def test_list_plugins_attributes(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile(
         'plugins_attributes_list')
     plugins = self._nessus.ListPluginsAttributes()
-    self.assertEquals(37, len(plugins), plugins)
+    self.assertEqual(37, len(plugins), plugins)
 
   def test_list_plugins_in_family(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile(
         'plugins_list_family_general')
     plugins = self._nessus.ListPluginsInFamily('General')
-    self.assertEquals(164, len(plugins), plugins)
+    self.assertEqual(164, len(plugins), plugins)
 
   def test_list_plugins_in_family_wrong_family(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile(
         'plugins_list_family_null')
     plugins = self._nessus.ListPluginsInFamily('I am not a valid family')
-    self.assertEquals([], plugins)
+    self.assertEqual([], plugins)
 
 
 if __name__ == "__main__":
+  logging.basicConfig(
+      level=logging.ERROR,
+      format='[%(levelname)s] (%(threadName)-10s) %(message)s',
+  )
   unittest.main()

@@ -4,25 +4,19 @@ Methods mirror what is in the official API at
 file:///C:/Users/Tmu/Desktop/nessus/nessus_5.0_XMLRPC_protocol_guide.pdf
 
 Example usage:
-  nessus = Nessus('127.0.0.1:8443')
-  nessus.Login('admin', 'pass$%&(#'%#[]@:')
-  logging.info('Feeds: %s', nessus.Feed())
-  nessus.Logout()
+  with Nessus('127.0.0.1:8443') as nes:
+    nes.Login('admin', 'pass$%&(#'%#[]@:')
+    logging.info('Feeds: %s', nes.Feed())
 """
 
-import os
 from concurrent import futures
 from urllib import request
 import functools
 import json
 import logging
+import os
 import random
 import urllib
-
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='[%(levelname)s] (%(threadName)-10s) %(message)s',
-)
 
 HOST = 'https://127.0.0.1:8443'
 MAX_SEQ = 2 ** 31 - 1
@@ -30,6 +24,37 @@ MAX_SEQ = 2 ** 31 - 1
 
 class NessusError(Exception):
   pass
+
+
+def FutureCallback(fn):
+  @functools.wraps(fn)
+  def wrapper(callback, future):
+    if not future.done():
+      raise NessusError('Future callback called before the future was finished.')
+    try:
+      contents = future.result()
+    except (
+        futures.CancelledError,
+        futures.TimeoutError,
+        Exception) as e:
+      raise NessusError(e)
+    return fn(callback, contents)
+  return wrapper
+
+def SelfFutureCallback(fn):
+  @functools.wraps(fn)
+  def wrapper(self, callback, future):
+    if not future.done():
+      raise NessusError('Future callback called before the future was finished.')
+    try:
+      contents = future.result()
+    except (
+        futures.CancelledError,
+        futures.TimeoutError,
+        Exception) as e:
+      raise NessusError(e)
+    return fn(self, callback, contents)
+  return wrapper
 
 
 class Nessus(object):
@@ -51,7 +76,7 @@ class Nessus(object):
       self.Logout()
 
   def _BuildRequest(self, path, data=None):
-    request = urllib.request.Request(HOST + path + '?json=1')
+    request = urllib.request.Request(self._host + path + '?json=1')
     request.add_header('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8')
     request.add_header('Accept', 'application/json')
     if data:
@@ -81,7 +106,9 @@ class Nessus(object):
     json_resp = json.loads(raw_json)['reply']
     status = json_resp.get('status', '')
     if status != 'OK':
-      raise NessusError('Status was not OK: %s' % status)
+      raise NessusError('Status was not OK: %s: %s' % (status, json_resp['contents']))
+    if 'contents' not in json_resp:
+      return ''
     return json_resp['contents']
 
   @staticmethod
@@ -114,20 +141,22 @@ class Nessus(object):
       return future
     else:
       futures.wait([future])
-      self._LoginDone(callback, future)
+      return self._LoginDone(callback, future)
 
-  def _LoginDone(self, callback, future):
-    contents = future.result()
+  @SelfFutureCallback
+  def _LoginDone(self, callback, contents):
     self._session_token = contents['token']
     logging.debug('Token is %s', self._session_token)
     if callback:
       callback('Successully connected to Nessus')
 
-  def _SimpleReturnCB(self, callback, future):
+  @staticmethod
+  @FutureCallback
+  def _SimpleReturnCB(callback, result):
     if callback:
-      callback(future.result())
+      callback(result)
     else:
-      return future.result()
+      return result
 
   def Logout(self, callback=None):
     data = {
@@ -140,13 +169,13 @@ class Nessus(object):
       return future
     else:
       futures.wait([future])
-      self._LogoutDone(callback, future)
+      return self._LogoutDone(callback, future)
 
-  def _LogoutDone(self, callback, future):
+  @SelfFutureCallback
+  def _LogoutDone(self, callback, content):
     self._session_token = None
-    logging.debug('Token is %s', self._session_token)
     if callback:
-      callback('Successully connected to Nessus')
+      callback('Logout from Nessus successful')
     
   @property
   def is_logged_in(self):
@@ -179,8 +208,9 @@ class Nessus(object):
       futures.wait([future])
       return self._ListServerSettingsDone(callback, future)
 
-  def _ListServerSettingsDone(self, callback, future):
-    contents = future.result()
+  @staticmethod
+  @FutureCallback
+  def _ListServerSettingsDone(callback, contents):
     settings = contents.get('securesettings')
     if callback:
       callback(settings)
@@ -215,8 +245,9 @@ class Nessus(object):
       futures.wait([future])
       return self._ListPreferencesDone(callback, future)
 
-  def _ListPreferencesDone(self, callback, future):
-    contents = future.result()
+  @staticmethod
+  @FutureCallback
+  def _ListPreferencesDone(callback, contents):
     return {
         pref['name']: pref['value'] for pref in contents[
             'serverpreferences']['preference']}
@@ -235,8 +266,9 @@ class Nessus(object):
       futures.wait([future])
       return self._ServerLoadDone(callback, future)
 
-  def _ServerLoadDone(self, callback, future):
-    contents = future.result()
+  @staticmethod
+  @FutureCallback
+  def _ServerLoadDone(callback, contents):
     return contents['load'], contents['platform']
 
   def ServerUUID(self, callback=None):
@@ -253,8 +285,9 @@ class Nessus(object):
       futures.wait([future])
       return self._ServerUUIDDone(callback, future)
 
-  def _ServerUUIDDone(self, callback, future):
-    contents = future.result()
+  @staticmethod
+  @FutureCallback
+  def _ServerUUIDDone(callback, contents):
     return contents['uuid']
 
   def ServerCert(self, callback=None):
@@ -271,8 +304,10 @@ class Nessus(object):
       futures.wait([future])
       return self._ServerCertDone(callback, future)
 
-  def _ServerCertDone(self, callback, future):
-    return future.result()
+  @staticmethod
+  @FutureCallback
+  def _ServerCertDone(callback, contents):
+    return contents
 
   def ListPlugins(self, callback=None):
     data = {
@@ -289,8 +324,8 @@ class Nessus(object):
       return self._ListPluginsDone(callback, future)
 
   @staticmethod
-  def _ListPluginsDone(callback, future):
-    contents = future.result()
+  @FutureCallback
+  def _ListPluginsDone(callback, contents):
     return {
         family['familyname']: int(family['numfamilymembers'])
         for family in contents['pluginfamilylist']['family']}
@@ -310,8 +345,8 @@ class Nessus(object):
       return self._ListPluginsAttributesDone(callback, future)
 
   @staticmethod
-  def _ListPluginsAttributesDone(callback, future):
-    contents = future.result()
+  @FutureCallback
+  def _ListPluginsAttributesDone(callback, contents):
     return contents['pluginsattributes']['attribute']
 
   def ListPluginsInFamily(self, family, callback=None):
@@ -330,18 +365,23 @@ class Nessus(object):
       return self._ListPluginsInFamilyDone(callback, future)
 
   @staticmethod
-  def _ListPluginsInFamilyDone(callback, future):
-    contents = future.result()
+  @FutureCallback
+  def _ListPluginsInFamilyDone(callback, contents):
     if contents['pluginlist']:
       return contents['pluginlist']['plugin']
     return []
 
 
 if __name__ == '__main__':
+  logging.basicConfig(
+      level=logging.DEBUG,
+      format='[%(levelname)s] (%(threadName)-10s) %(message)s',
+  )
+
   def callback(status):
     logging.info('Future finished: %s', status)
   with Nessus(HOST, dump_path='C:\\Users\\Tmu\\Desktop\\tmp') as nessus:
-    nessus.Login('admin', 'simplerpass')
+    #nessus.Login('admin', 'simplerpass')
     #logging.info('Feed: %s', nessus.Feed())
     #logging.info('Server settings: %s', nessus.ListServerSettings())
     #plugins = nessus.PluginsDescriptions()
@@ -351,4 +391,4 @@ if __name__ == '__main__':
     #logging.info(nessus.ServerCert())
     #logging.info(nessus.ListPlugins())
     #logging.info(nessus.ListPluginsAttributes())
-    logging.info(nessus.ListPluginsInFamily('Nyanyanyan'))
+    logging.info(nessus.ListPluginsInFamily('General'))
