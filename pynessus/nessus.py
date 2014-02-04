@@ -10,6 +10,7 @@ Example usage:
   nessus.Logout()
 """
 
+import os
 from concurrent import futures
 from urllib import request
 import functools
@@ -36,10 +37,11 @@ class Nessus(object):
   All methods support both synchronous and asynchronous calls.
   """
 
-  def __init__(self, host, executor=None):
+  def __init__(self, host, executor=None, dump_path=None):
     self._host = host
     self._session_token = None
     self._executor = executor or futures.ThreadPoolExecutor(max_workers=5)
+    self._dump_path = dump_path
 
   def __enter__(self):
     return self
@@ -62,7 +64,7 @@ class Nessus(object):
     return request
 
   @staticmethod
-  def _SendRequest(request):
+  def _SendRequest(request, dump_path=None):
     logging.debug('Sending request to %s with data %s',
         request.get_full_url(), request.data)
     resp = urllib.request.urlopen(request)
@@ -70,6 +72,12 @@ class Nessus(object):
     encoding = url_info.get('Content-Encoding', 'utf-8')
     raw_json = resp.read().decode(encoding)
     logging.debug('urlopen returned \n%s\n', raw_json)
+    if dump_path:
+      with open(os.path.join(
+          dump_path,
+          request.selector[1:request.selector.find('?')].replace('/', '_') + '.json'),
+          'w') as dump:
+        dump.write(raw_json)
     json_resp = json.loads(raw_json)['reply']
     status = json_resp.get('status', '')
     if status != 'OK':
@@ -77,7 +85,7 @@ class Nessus(object):
     return json_resp['contents']
 
   @staticmethod
-  def _SendRawRequest(request):
+  def _SendRawRequest(request, dump_path=None):
     logging.debug('Sending request to %s with data %s',
         request.get_full_url(), request.data)
     resp = urllib.request.urlopen(request)
@@ -85,6 +93,12 @@ class Nessus(object):
     encoding = url_info.get('Content-Encoding', 'utf-8')
     decoded_raw = resp.read().decode(encoding)
     logging.debug('urlopen returned \n%s\n', decoded_raw)
+    if dump_path:
+      with open(os.path.join(
+          dump_path,
+          request.selector[1:request.selector.find('?')].replace('/', '_') + '.raw'),
+          'w') as dump:
+        dump.write(decoded_raw)
     return decoded_raw
 
   def Login(self, login, password, callback=None):
@@ -94,7 +108,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/login', data)
-    future = self._executor.submit(self._SendRequest, request)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(functools.partial(self._LoginDone, callback))
       return future
@@ -120,7 +134,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/logout', data)
-    future = self._executor.submit(self._SendRequest, request)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(functools.partial(self._LogoutDone, callback))
       return future
@@ -143,7 +157,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/feed', data)
-    future = self._executor.submit(self._SendRequest, request)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(functools.partial(self._SimpleReturnCB, callback))
       return future
@@ -156,7 +170,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/server/securesettings/list', data)
-    future = self._executor.submit(self._SendRequest, request)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(
           functools.partial(self._ListServerSettingsDone, callback))
@@ -178,7 +192,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/plugins/descriptions', data)
-    future = self._executor.submit(self._SendRequest, request)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(
           functools.partial(self._SimpleReturnCB, callback))
@@ -192,7 +206,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/server/preferences/list', data)
-    future = self._executor.submit(self._SendRequest, request)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(
           functools.partial(self._ListPreferencesDone, callback))
@@ -212,7 +226,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/server/load', data)
-    future = self._executor.submit(self._SendRequest, request)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(
           functools.partial(self._ServerLoadDone, callback))
@@ -230,7 +244,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/uuid', data)
-    future = self._executor.submit(self._SendRequest, request)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(
           functools.partial(self._ServerUUIDDone, callback))
@@ -248,7 +262,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/getcert', data)
-    future = self._executor.submit(self._SendRawRequest, request)
+    future = self._executor.submit(self._SendRawRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(
           functools.partial(self._ServerCertDone, callback))
@@ -265,7 +279,7 @@ class Nessus(object):
       'seq': random.randint(1, MAX_SEQ),
     }
     request = self._BuildRequest('/plugins/list', data)
-    future = self._executor.submit(self._SendRequest, request)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
     if callback:
       future.add_done_callback(
           functools.partial(self._ListPluginsDone, callback))
@@ -281,18 +295,60 @@ class Nessus(object):
         family['familyname']: int(family['numfamilymembers'])
         for family in contents['pluginfamilylist']['family']}
 
+  def ListPluginsAttributes(self, callback=None):
+    data = {
+      'seq': random.randint(1, MAX_SEQ),
+    }
+    request = self._BuildRequest('/plugins/attributes/list', data)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ListPluginsAttributesDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ListPluginsAttributesDone(callback, future)
+
+  @staticmethod
+  def _ListPluginsAttributesDone(callback, future):
+    contents = future.result()
+    return contents['pluginsattributes']['attribute']
+
+  def ListPluginsInFamily(self, family, callback=None):
+    data = {
+      'seq': random.randint(1, MAX_SEQ),
+      'family': family,
+    }
+    request = self._BuildRequest('/plugins/list/family', data)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ListPluginsInFamilyDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ListPluginsInFamilyDone(callback, future)
+
+  @staticmethod
+  def _ListPluginsInFamilyDone(callback, future):
+    contents = future.result()
+    if contents['pluginlist']:
+      return contents['pluginlist']['plugin']
+    return []
 
 
 if __name__ == '__main__':
   def callback(status):
     logging.info('Future finished: %s', status)
-  with Nessus(HOST) as nessus:
+  with Nessus(HOST, dump_path='C:\\Users\\Tmu\\Desktop\\tmp') as nessus:
     nessus.Login('admin', 'simplerpass')
     #logging.info('Feed: %s', nessus.Feed())
     #logging.info('Server settings: %s', nessus.ListServerSettings())
     #plugins = nessus.PluginsDescriptions()
-    #ogging.info(nessus.ListPreferences())
+    #logging.info(nessus.ListPreferences())
     #logging.info(nessus.ServerLoad())
     #logging.info(nessus.ServerUUID())
     #logging.info(nessus.ServerCert())
-    logging.info(nessus.ListPlugins())
+    #logging.info(nessus.ListPlugins())
+    #logging.info(nessus.ListPluginsAttributes())
+    logging.info(nessus.ListPluginsInFamily('Nyanyanyan'))

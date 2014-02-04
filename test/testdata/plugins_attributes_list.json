@@ -1,0 +1,661 @@
+{
+    "reply": {
+        "contents": {
+            "pluginsattributes": {
+                "attribute": [
+                    {
+                        "control": {
+                            "readable_regex": "NUMBER",
+                            "regex": "^[0-9]+$",
+                            "type": "entry"
+                        },
+                        "name": "bid",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Bugtraq ID"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "true",
+                                    "false"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "exploit_framework_canvas",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "CANVAS Exploit Framework"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "CANVAS",
+                                    "D2ExploitPack",
+                                    "White_Phosphorus"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "canvas_package",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "CANVAS Package"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "Cert VU reference (ie: 10031)",
+                            "regex": "^[0-9]+$",
+                            "type": "entry"
+                        },
+                        "name": "cert",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "CERT Vulnerability ID"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "true",
+                                    "false"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "exploit_framework_core",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "CORE Exploit Framework"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "cpe",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "CPE"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "CVE-YYYY-ID (ie: CVE-2011-0018)",
+                            "regex": "^(CVE|CAN)-(1999|20[01][0-9])-[0-9]{4,}$",
+                            "type": "entry"
+                        },
+                        "name": "cve",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "CVE"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "7.5",
+                            "regex": "^[0-9]+(\\.[0-9]+)?$",
+                            "type": "entry"
+                        },
+                        "name": "cvss_base_score",
+                        "operators": {
+                            "operator": [
+                                "lt",
+                                "gt",
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "CVSS Base Score"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "4.2",
+                            "regex": "^[0-9]+(\\.[0-9]+)$",
+                            "type": "entry"
+                        },
+                        "name": "cvss_temporal_score",
+                        "operators": {
+                            "operator": [
+                                "lt",
+                                "gt",
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "CVSS Temporal Score"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "cvss_temporal_vector",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "CVSS Temporal Vector"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "cvss_vector",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "CVSS Vector"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "true",
+                                    "false"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "exploit_framework_d2_elliot",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "Elliot Exploit Framework"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "d2_elliot_name",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Elliot Exploit Name"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "true",
+                                    "false"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "exploit_available",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "Exploit Available"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "NUMBER",
+                            "regex": "^[0-9]+$",
+                            "type": "entry"
+                        },
+                        "name": "edb-id",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Exploit Database ID"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "true",
+                                    "false"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "exploit_framework_exploithub",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "ExploitHub"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "Exploits are available",
+                                    "No exploit is required",
+                                    "No known exploits are available"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "exploitability_ease",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "Exploitability Ease"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "true",
+                                    "false"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "exploited_by_malware",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "Exploited By Malware"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "IAVA reference (ie: 2011-A-0151)",
+                            "regex": "^[0-9]+-[A-Za-z]-[0-9]+$",
+                            "type": "entry"
+                        },
+                        "name": "iava",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "IAVA ID"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "IAVB reference (ie: 2011-B-0151)",
+                            "regex": "^[0-9]+-[A-Za-z]-[0-9]+$",
+                            "type": "entry"
+                        },
+                        "name": "iavb",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "IAVB ID"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "IAVT reference (ie: 2011-A-0151)",
+                            "regex": "^[0-9]+-[A-Za-z]-[0-9]+$",
+                            "type": "entry"
+                        },
+                        "name": "iavt",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "IAVT ID"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "true",
+                                    "false"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "exploit_framework_metasploit",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "Metasploit Exploit Framework"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "metasploit_name",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Metasploit Name"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "MS0X-YZT",
+                            "regex": "^MS[0-9]+-[0-9]+$",
+                            "type": "entry"
+                        },
+                        "name": "msft",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Microsoft Bulletin"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "NUMBER",
+                            "regex": "^[0-9]+$",
+                            "type": "entry"
+                        },
+                        "name": "osvdb",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "OSVDB ID"
+                    },
+                    {
+                        "control": {
+                            "type": "datefield"
+                        },
+                        "name": "patch_publication_date",
+                        "operators": {
+                            "operator": [
+                                "date-lt",
+                                "date-gt",
+                                "date-eq",
+                                "date-neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Patch Publication Date"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "description",
+                        "operators": {
+                            "operator": [
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Plugin Description"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "NUMBER",
+                            "regex": "^[0-9, ]+$",
+                            "type": "entry"
+                        },
+                        "name": "plugin_id",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Plugin ID"
+                    },
+                    {
+                        "control": {
+                            "type": "datefield"
+                        },
+                        "name": "plugin_modification_date",
+                        "operators": {
+                            "operator": [
+                                "date-lt",
+                                "date-gt",
+                                "date-eq",
+                                "date-neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Plugin Modification Date"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "plugin_name",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Plugin Name"
+                    },
+                    {
+                        "control": {
+                            "type": "datefield"
+                        },
+                        "name": "plugin_publication_date",
+                        "operators": {
+                            "operator": [
+                                "date-lt",
+                                "date-gt",
+                                "date-eq",
+                                "date-neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Plugin Publication Date"
+                    },
+                    {
+                        "control": {
+                            "list": {
+                                "entry": [
+                                    "local",
+                                    "remote"
+                                ]
+                            },
+                            "type": "dropdown"
+                        },
+                        "name": "plugin_type",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq"
+                            ]
+                        },
+                        "readable_name": "Plugin Type"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "NUMBER",
+                            "regex": "^[0-9]+$",
+                            "type": "entry"
+                        },
+                        "name": "secunia",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Secunia ID"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "see_also",
+                        "operators": {
+                            "operator": [
+                                "eq",
+                                "neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "See Also"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "solution",
+                        "operators": {
+                            "operator": [
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Solution"
+                    },
+                    {
+                        "control": {
+                            "readable_regex": "TEXT",
+                            "regex": ".*",
+                            "type": "entry"
+                        },
+                        "name": "synopsis",
+                        "operators": {
+                            "operator": [
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Synopsis"
+                    },
+                    {
+                        "control": {
+                            "type": "datefield"
+                        },
+                        "name": "vuln_publication_date",
+                        "operators": {
+                            "operator": [
+                                "date-lt",
+                                "date-gt",
+                                "date-eq",
+                                "date-neq",
+                                "match",
+                                "nmatch"
+                            ]
+                        },
+                        "readable_name": "Vulnerability Publication Date"
+                    }
+                ]
+            }
+        },
+        "seq": "1866102964",
+        "status": "OK"
+    }
+}

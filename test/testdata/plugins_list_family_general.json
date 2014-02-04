@@ -1,0 +1,996 @@
+{
+    "reply": {
+        "contents": {
+            "pluginlist": {
+                "plugin": [
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ip_protocol_scan.nasl",
+                        "pluginid": "14788",
+                        "pluginname": "IP Protocols Scan"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ifconfig_mac.nasl",
+                        "pluginid": "33276",
+                        "pluginname": "Enumerate MAC Addresses via SSH"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "check_ports.nasl",
+                        "pluginid": "10919",
+                        "pluginname": "Open Port Re-check"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_rdp.nbin",
+                        "pluginid": "27507",
+                        "pluginname": "OS Identification : RDP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_supported_versions.nasl",
+                        "pluginid": "56984",
+                        "pluginname": "SSL / TLS Versions Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "find_ap.nasl",
+                        "pluginid": "11026",
+                        "pluginname": "Wireless Access Point Detection"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_sinfp.nasl",
+                        "pluginid": "25250",
+                        "pluginname": "OS Identification : SinFP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ruby_on_rails_known_secret.nbin",
+                        "pluginid": "64298",
+                        "pluginname": "Well-Known Ruby on Rails Secret Token Used on Remote Application"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "lltd_discover.nasl",
+                        "pluginid": "24904",
+                        "pluginname": "Link Layer Topology Discovery (LLTD) Detection"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_supported_compression.nasl",
+                        "pluginid": "62563",
+                        "pluginname": "SSL Compression Methods Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "unsupported_operating_system.nasl",
+                        "pluginid": "33850",
+                        "pluginname": "Unsupported Unix Operating System"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "openssl_resume_disabled_cipher.nasl",
+                        "pluginid": "51893",
+                        "pluginname": "OpenSSL SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG Ciphersuite Disabled Cipher Issue"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl3_tls1_iv_impl_info_disclosure.nasl",
+                        "pluginid": "58751",
+                        "pluginname": "SSL/TLS Protocol Initialization Vector Implementation Information Disclosure Vulnerability"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ksplice.nasl",
+                        "pluginid": "65047",
+                        "pluginname": "KSplice : Installed Patches"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ipmi_supported_cipher_suites.nbin",
+                        "pluginid": "68932",
+                        "pluginname": "IPMI Cipher Suites Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_null_supported_ciphers.nasl",
+                        "pluginid": "66848",
+                        "pluginname": "SSL Null Cipher Suites Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "labrea.nasl",
+                        "pluginid": "10796",
+                        "pluginname": "LaBrea Tarpitted Host Detection"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "tcp_timestamps.nasl",
+                        "pluginid": "25220",
+                        "pluginname": "TCP/IP Timestamps Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "linux24_udp_id0.nasl",
+                        "pluginid": "17841",
+                        "pluginname": "Linux Kernel UDP Implementation IP Identification Field Remote OS Disclosure"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "vmware_detect.nasl",
+                        "pluginid": "20094",
+                        "pluginname": "VMware Virtual Machine Detection"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "vmware_player_linux_installed.nbin",
+                        "pluginid": "71051",
+                        "pluginname": "VMware Player for Linux Installed"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "unprotected_memcached.nasl",
+                        "pluginid": "52633",
+                        "pluginname": "Unprotected memcached"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ike1_aggressive_mode_with_psk.nasl",
+                        "pluginid": "62694",
+                        "pluginname": "Internet Key Exchange (IKE) Aggressive Mode with Pre-Shared Key"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ifconfig_inet4.nasl",
+                        "pluginid": "25203",
+                        "pluginname": "Enumerate IPv4 Interfaces via SSH"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "backported_security_patches_www.nasl",
+                        "pluginid": "39521",
+                        "pluginname": "Backported Security Patch Detection (WWW)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_self_signed_certificate.nasl",
+                        "pluginid": "57582",
+                        "pluginname": "SSL Self-Signed Certificate"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "emc_autostart_ftagent_version.nbin",
+                        "pluginid": "61490",
+                        "pluginname": "EMC AutoStart ftAgent Version Detection"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "dmi_vmware_detect.nasl",
+                        "pluginid": "47761",
+                        "pluginname": "VMware Virtual Machine detection (dmidecode)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_fortigate.nasl",
+                        "pluginid": "62969",
+                        "pluginname": "SSL Certificate Signed with the Compromised Fortigate Key"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_html.nasl",
+                        "pluginid": "35779",
+                        "pluginname": "OS Identification : HTML"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_supported_protocols.nasl",
+                        "pluginid": "62564",
+                        "pluginname": "TLS Next Protocols Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_turktrust.nasl",
+                        "pluginid": "63398",
+                        "pluginname": "SSL Certificate Chain Contains Illegitimate TURKTRUST Intermediate CA"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_ciphers.nasl",
+                        "pluginid": "10863",
+                        "pluginname": "SSL Certificate Information"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_smtp.nasl",
+                        "pluginid": "57915",
+                        "pluginname": "OS Identification : SMTP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "global_ipv6_addr.nasl",
+                        "pluginid": "45405",
+                        "pluginname": "Reachable IPv6 address"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssh_key_size.nasl",
+                        "pluginid": "57620",
+                        "pluginname": "Small SSH RSA Key"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_afp.nasl",
+                        "pluginid": "53331",
+                        "pluginname": "OS Identification : Apple Filing Protocol"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "linux_isn.nasl",
+                        "pluginid": "56283",
+                        "pluginname": "Linux Kernel TCP Sequence Number Generation Security Weakness"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "netstat_parse.nasl",
+                        "pluginid": "64582",
+                        "pluginname": "Netstat Connection Information"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "solaris_enum_packages.nasl",
+                        "pluginid": "29217",
+                        "pluginname": "Solaris Installed Package Enumeration (credentialed check)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssh1_proto_enabled.nasl",
+                        "pluginid": "10882",
+                        "pluginname": "SSH Protocol Version 1 Session Key Retrieval"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ident_process_owner.nasl",
+                        "pluginid": "14674",
+                        "pluginname": "identd Service UID Association"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_ssh.nasl",
+                        "pluginid": "25287",
+                        "pluginname": "OS Identification : SSH"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint.nasl",
+                        "pluginid": "11936",
+                        "pluginname": "OS Identification"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "open_nntp_server.nasl",
+                        "pluginid": "17204",
+                        "pluginname": "News Server (NNTP) Anonymous Read / Write Access"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "traceroute.nasl",
+                        "pluginid": "10287",
+                        "pluginname": "Traceroute Information"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_nativelanmanager.nasl",
+                        "pluginid": "58604",
+                        "pluginname": "OS Identification : NativeLanManager"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "fqdn.nasl",
+                        "pluginid": "12053",
+                        "pluginname": "Host Fully Qualified Domain Name (FQDN) Resolution"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_crime.nasl",
+                        "pluginid": "62565",
+                        "pluginname": "TLS CRIME Vulnerability"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_cert_expiry.nasl",
+                        "pluginid": "15901",
+                        "pluginname": "SSL Certificate Expiry"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "backported_security_patches_ftp.nasl",
+                        "pluginid": "39519",
+                        "pluginname": "Backported Security Patch Detection (FTP)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_medium_supported_ciphers.nasl",
+                        "pluginid": "42873",
+                        "pluginname": "SSL Medium Strength Cipher Suites Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_certificate_chain.nasl",
+                        "pluginid": "57571",
+                        "pluginname": "SSL Certificate Chain Analysis"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_sip.nasl",
+                        "pluginid": "50542",
+                        "pluginname": "OS Identification : SIP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_mdns.nasl",
+                        "pluginid": "25245",
+                        "pluginname": "OS Identification : mDNS"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "miscflood.nasl",
+                        "pluginid": "10735",
+                        "pluginname": "Generic Overflow Detection"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_cert_CN_mismatch.nasl",
+                        "pluginid": "45410",
+                        "pluginname": "SSL Certificate commonName Mismatch"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "nut_detect.nasl",
+                        "pluginid": "59657",
+                        "pluginname": "Network UPS Tools Detection"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_rc4_supported_ciphers.nasl",
+                        "pluginid": "65821",
+                        "pluginname": "SSL RC4 Cipher Suites Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "patch_management_auditing_ok.nasl",
+                        "pluginid": "64295",
+                        "pluginname": "Patch Management Auditing Satisfied"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "bios_get_info_smb_reg.nasl",
+                        "pluginid": "34097",
+                        "pluginname": "BIOS Version Information (via SMB)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_cyberoam.nasl",
+                        "pluginid": "61447",
+                        "pluginname": "SSL Certificate Signed with the Publicly Known Cyberoam Key"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "raptor_isn.nasl",
+                        "pluginid": "11057",
+                        "pluginname": "TCP/IP Initial Sequence Number (ISN) Reuse Weakness"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_ntp.nasl",
+                        "pluginid": "25244",
+                        "pluginname": "OS Identification : NTP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_pfs_supported_ciphers.nasl",
+                        "pluginid": "57041",
+                        "pluginname": "SSL Perfect Forward Secrecy Cipher Suites Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_renegotiation.nasl",
+                        "pluginid": "42880",
+                        "pluginname": "SSL / TLS Renegotiation Handshakes MiTM Plaintext Data Injection"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "openssl_resume_different_cipher.nasl",
+                        "pluginid": "51892",
+                        "pluginname": "OpenSSL SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG Session Resume Ciphersuite Downgrade Issue"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_telnet.nasl",
+                        "pluginid": "29831",
+                        "pluginname": "OS Identification : Telnet"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ipthreat_lookup_netstat_inbound.nasl",
+                        "pluginid": "59713",
+                        "pluginname": "Active Inbound Connection From Host Listed in Known Bot Database"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_ftp.nasl",
+                        "pluginid": "35658",
+                        "pluginname": "OS Identification : FTP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_weak_rsa_keys.nasl",
+                        "pluginid": "60108",
+                        "pluginname": "SSL Certificate Chain Contains Weak RSA Keys"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_msrprc.nasl",
+                        "pluginid": "25248",
+                        "pluginname": "OS Identification : MSRPC"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "icmp_timestamp.nasl",
+                        "pluginid": "10114",
+                        "pluginname": "ICMP Timestamp Request Remote Date Disclosure"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_supermicro.nasl",
+                        "pluginid": "71534",
+                        "pluginname": "SuperMicro Device Uses Default SSL Certificate"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_fail.nasl",
+                        "pluginid": "50350",
+                        "pluginname": "OS Identification Failed"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "dmi_system_info.nasl",
+                        "pluginid": "35351",
+                        "pluginname": "System Information Enumeration (via DMI)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ipthreat_lookup_netstat.nbin",
+                        "pluginid": "58430",
+                        "pluginname": "Active Outbound Connection to Host Listed in Known Bot Database"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "device_type.nasl",
+                        "pluginid": "54615",
+                        "pluginname": "Device Type"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "icmp_niq.nasl",
+                        "pluginid": "45399",
+                        "pluginname": "ICMP Node Information Query Information Disclosure"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "vmware_workstation_linux_installed.nbin",
+                        "pluginid": "71053",
+                        "pluginname": "VMware Workstation for Linux Installed"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_http.nasl",
+                        "pluginid": "25247",
+                        "pluginname": "OS Identification : HTTP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "dmi_proc_info.nasl",
+                        "pluginid": "45432",
+                        "pluginname": "Processor Information (via DMI)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "operating_system_extended_support.nasl",
+                        "pluginid": "66293",
+                        "pluginname": "Unix Operating System on Extended Support"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_weak_hash.nasl",
+                        "pluginid": "35291",
+                        "pluginname": "SSL Certificate Signed using Weak Hashing Algorithm"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "dropbox_listen.nasl",
+                        "pluginid": "56692",
+                        "pluginname": "Dropbox Software Detection (listener)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ipthreat_lookup.nbin",
+                        "pluginid": "52669",
+                        "pluginname": "Host is Listed in Known Bot Database"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_sslcert.nasl",
+                        "pluginid": "50543",
+                        "pluginname": "OS Identification : SSL Certificates"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_weak_rsa_keys_under_2048.nasl",
+                        "pluginid": "69551",
+                        "pluginname": "SSL Certificate Chain Contains RSA Keys Less Than 2048 bits"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "cpe.nbin",
+                        "pluginid": "45590",
+                        "pluginname": "Common Platform Enumeration (CPE)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_unordered_certs.nasl",
+                        "pluginid": "56471",
+                        "pluginname": "SSL Certificate Chain Not Sorted"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_cert_future_validity.nasl",
+                        "pluginid": "42980",
+                        "pluginname": "SSL Certificate Expiry - Future Validity"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_snmp_sysobjectid.nasl",
+                        "pluginid": "44344",
+                        "pluginname": "OS Identification : SNMP sysObjectID"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "acap_starttls.nasl",
+                        "pluginid": "42084",
+                        "pluginname": "ACAP Service STARTTLS Command Support"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_snmp.nasl",
+                        "pluginid": "25246",
+                        "pluginname": "OS Identification : SNMP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "record_route.nasl",
+                        "pluginid": "12264",
+                        "pluginname": "Record Route"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "urlthreat_lookup.nbin",
+                        "pluginid": "52670",
+                        "pluginname": "Web Site Links to Malicious Content"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "mit_kerberos_cve-2013-1418.nasl",
+                        "pluginid": "70941",
+                        "pluginname": "MIT Kerberos 5 setup_server_realm() Remote DoS"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_smb.nasl",
+                        "pluginid": "25252",
+                        "pluginname": "OS Identification : SMB"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "icmp_mask_req.nasl",
+                        "pluginid": "10113",
+                        "pluginname": "ICMP Netmask Request Information Disclosure"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "alcatel_aos_cve_2008_4383.nasl",
+                        "pluginid": "69790",
+                        "pluginname": "Alcatel-Lucent OmniSwitch Series Agranat-Embweb Management Server Session Cookie Handling Remote Overflow"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_renegotiation_dos.nasl",
+                        "pluginid": "53491",
+                        "pluginname": "SSL / TLS Renegotiation DoS"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_xprobe.nasl",
+                        "pluginid": "25249",
+                        "pluginname": "OS Identification : ICMP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "hp_laserjet_hpsbpi02575_directory_traversal.nasl",
+                        "pluginid": "69480",
+                        "pluginname": "HP LaserJet PJL Interface Directory Traversal (HPSBPI02575)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "vmware_workstation_linux_9_0_3.nasl",
+                        "pluginid": "71054",
+                        "pluginname": "VMware Workstation 9.x < 9.0.3 Multiple Privilege Escalation Vulnerabilities (VMSA-2013-0013 / VMSA-2013-0014)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "last_reboot.nasl",
+                        "pluginid": "56468",
+                        "pluginname": "Time of Last System Startup"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_upnp.nasl",
+                        "pluginid": "52043",
+                        "pluginname": "OS Identification : UPnP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "external_svc_ident.nasl",
+                        "pluginid": "14664",
+                        "pluginname": "External Scanner Service Identification"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_cert_blacklist.nasl",
+                        "pluginid": "52963",
+                        "pluginname": "Blacklisted SSL Certificate"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "wmi_system_hostname.nbin",
+                        "pluginid": "55472",
+                        "pluginname": "Device Hostname"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_ldap.nasl",
+                        "pluginid": "58076",
+                        "pluginname": "OS Identification : LDAP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_snmp_software.nasl",
+                        "pluginid": "51859",
+                        "pluginname": "OS Identification : SNMP hrSWInstalledName"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_cbc_supported_ciphers.nasl",
+                        "pluginid": "70544",
+                        "pluginname": "SSL Cipher Block Chaining Cipher Suites Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "sun_java_jre_installed_unix.nasl",
+                        "pluginid": "64815",
+                        "pluginname": "Oracle Java Runtime Environment (JRE) Detection (Unix)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "vmware_workstation_linux_9_0_1.nasl",
+                        "pluginid": "72041",
+                        "pluginname": "VMware Workstation 9.x < 9.0.1 VMX Process DoS (VMSA-2014-0001) (Linux)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_unused_certs.nasl",
+                        "pluginid": "56472",
+                        "pluginname": "SSL Certificate Chain Contains Unnecessary Certificates"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "bios_get_info_ssh.nasl",
+                        "pluginid": "34098",
+                        "pluginname": "BIOS version (SSH)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "icmp_domain_name.nasl",
+                        "pluginid": "20887",
+                        "pluginname": "ICMP Domain Name Request"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "patch_management_auditing.nasl",
+                        "pluginid": "64294",
+                        "pluginname": "Patch Management Windows Auditing Conflicts"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_apt1.nasl",
+                        "pluginid": "64688",
+                        "pluginname": "APT1-Related SSL Certificate Detected"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "nntp_starttls.nasl",
+                        "pluginid": "42086",
+                        "pluginname": "NNTP Service STARTTLS Command Support"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "sshd_libkeyutils_backdoor.nasl",
+                        "pluginid": "64913",
+                        "pluginname": "SSHD libkeyutils Backdoor"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "backported_security_patches_ssh.nasl",
+                        "pluginid": "39520",
+                        "pluginname": "Backported Security Patch Detection (SSH)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "dmi_virtualbox_detect.nasl",
+                        "pluginid": "47801",
+                        "pluginname": "VirtualBox Virtual Machine detection (dmidecode)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "tcp_seq.nasl",
+                        "pluginid": "10443",
+                        "pluginname": "TCP/IP Predictable ISN (Initial Sequence Number) Generation Weakness"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "polarssl_dh_vuln.nasl",
+                        "pluginid": "53360",
+                        "pluginname": "SSL Server Accepts Weak Diffie-Hellman Keys"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_signed_certificate.nasl",
+                        "pluginid": "51192",
+                        "pluginname": "SSL Certificate Cannot Be Trusted"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "dmi_virtualpc_detect.nasl",
+                        "pluginid": "47800",
+                        "pluginname": "VirtualPC Virtual Machine detection (dmidecode)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_known_cert.nasl",
+                        "pluginid": "51356",
+                        "pluginname": "Well-known SSL Certificate Used in Remote Device"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "icap_version.nasl",
+                        "pluginid": "69928",
+                        "pluginname": "ICAP Server Type and Version"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ipmi_cipher0_auth_bypass.nbin",
+                        "pluginid": "68931",
+                        "pluginname": "IPMI Cipher Suite Zero Authentication Bypass"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "tivoli_directory_srv_null_cipher.nasl",
+                        "pluginid": "62574",
+                        "pluginname": "IBM Tivoli Directory Server TLS NULL Cipher (uncredentialed check)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "vmware_player_linux_5_0_3.nasl",
+                        "pluginid": "71052",
+                        "pluginname": "VMware Player 5.x < 5.0.3 Host Privilege Escalation (VMSA-2013-0013)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_misc.nasl",
+                        "pluginid": "65765",
+                        "pluginname": "OS Identification : Miscellaneous Methods"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "vmware_player_linux_5_0_1.nasl",
+                        "pluginid": "72039",
+                        "pluginname": "VMware Player 5.x < 5.0.1 VMX Process DoS (VMSA-2014-0001) (Linux)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "patches_summary.nbin",
+                        "pluginid": "66334",
+                        "pluginname": "Patch Report"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "dropbox_broadcast_detect.nasl",
+                        "pluginid": "56693",
+                        "pluginname": "Dropbox Software Detection (uncredentialed check)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_hnap.nasl",
+                        "pluginid": "53471",
+                        "pluginname": "OS Identification : HNAP"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_linux_distro.nasl",
+                        "pluginid": "25335",
+                        "pluginname": "OS Identification : Linux Distribution"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_supported_ciphers.nasl",
+                        "pluginid": "21643",
+                        "pluginname": "SSL Cipher Suites Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_ssh_netconf.nasl",
+                        "pluginid": "69181",
+                        "pluginname": "OS Identification : NETCONF Over SSH"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_diginotar.nasl",
+                        "pluginid": "56043",
+                        "pluginname": "SSL Certificate Signed with the Revoked DigiNotar Certificate Authority"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "aix_icmp_echo_reply_dos.nbin",
+                        "pluginid": "59917",
+                        "pluginname": "IBM AIX TCP Large Send Denial of Service Vulnerability"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "nntp_info.nasl",
+                        "pluginid": "11033",
+                        "pluginname": "News Server (NNTP) Information Disclosure"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_null_byte_in_cn.nasl",
+                        "pluginid": "42053",
+                        "pluginname": "SSL Certificate Null Character Spoofing Weakness"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_cert_future_expiry.nasl",
+                        "pluginid": "42981",
+                        "pluginname": "SSL Certificate Expiry - Future Expiry"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "cyrus_imap_nntp_auth_bypass.nasl",
+                        "pluginid": "57336",
+                        "pluginname": "Cyrus IMAPd NNTP AUTHINFO USER Command Parsing Authentication Bypass"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_weak_supported_ciphers.nasl",
+                        "pluginid": "26928",
+                        "pluginname": "SSL Weak Cipher Suites Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_cert_wrong_host.nasl",
+                        "pluginid": "45411",
+                        "pluginname": "SSL Certificate with Wrong Hostname"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_resume.nasl",
+                        "pluginid": "51891",
+                        "pluginname": "SSL Session Resume Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_basic_constraints.nasl",
+                        "pluginid": "56284",
+                        "pluginname": "SSL Certificate Fails to Adhere to Basic Constraints / Key Usage Extensions"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "alternate_hostnames.nasl",
+                        "pluginid": "46180",
+                        "pluginname": "Additional DNS Hostnames"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssh_supermicro.nasl",
+                        "pluginid": "71533",
+                        "pluginname": "SuperMicro Device Uses Default SSH Host Key"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ifconfig_inet6.nasl",
+                        "pluginid": "25202",
+                        "pluginname": "Enumerate IPv6 Interfaces via SSH"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ipthreat_lookup_dns.nbin",
+                        "pluginid": "58429",
+                        "pluginname": "DNS Server Listed in Known Bot Database"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "tls_block_cipher_padding_verify.nbin",
+                        "pluginid": "60016",
+                        "pluginname": "Vulnerability in TLS Could Allow Information Disclosure (2655992) (uncredentialed check)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "unix_enum_sw.nasl",
+                        "pluginid": "22869",
+                        "pluginname": "Software Enumeration (SSH)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "os_fingerprint_uname.nasl",
+                        "pluginid": "25251",
+                        "pluginname": "OS Identification : Unix uname"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "rdp_logon_screen.nbin",
+                        "pluginid": "66173",
+                        "pluginname": "RDP Screenshot"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "dmi_RAM_info.nasl",
+                        "pluginid": "45433",
+                        "pluginname": "Memory Information (via DMI)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssl_resume_different_cipher.nasl",
+                        "pluginid": "58768",
+                        "pluginname": "SSL Resume With Different Cipher Issue"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "readable_nntp_server.nasl",
+                        "pluginid": "39329",
+                        "pluginname": "News Server (NNTP) Anonymous Read Access"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "alcatel_aos_default_telnet_creds.nasl",
+                        "pluginid": "70212",
+                        "pluginname": "Alcatel OmniSwitch Default Credentials (telnet)"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "ssh_proto_version.nasl",
+                        "pluginid": "10881",
+                        "pluginname": "SSH Protocol Versions Supported"
+                    },
+                    {
+                        "pluginfamily": "General",
+                        "pluginfilename": "backported_security_patches_smtp.nasl",
+                        "pluginid": "57913",
+                        "pluginname": "Backported Security Patch Detection (SMTP)"
+                    }
+                ]
+            }
+        },
+        "seq": "1671928949",
+        "status": "OK"
+    }
+}

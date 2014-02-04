@@ -118,6 +118,24 @@ class TestNessus(unittest.TestCase):
     plugins = self._nessus.ListPlugins()
     self.assertEquals(47, len(plugins), plugins)
 
+  def test_list_plugins_attributes(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile(
+        'plugins_attributes_list')
+    plugins = self._nessus.ListPluginsAttributes()
+    self.assertEquals(37, len(plugins), plugins)
+
+  def test_list_plugins_in_family(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile(
+        'plugins_list_family_general')
+    plugins = self._nessus.ListPluginsInFamily('General')
+    self.assertEquals(164, len(plugins), plugins)
+
+  def test_list_plugins_in_family_wrong_family(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile(
+        'plugins_list_family_null')
+    plugins = self._nessus.ListPluginsInFamily('I am not a valid family')
+    self.assertEquals([], plugins)
+
 
 if __name__ == "__main__":
   unittest.main()
