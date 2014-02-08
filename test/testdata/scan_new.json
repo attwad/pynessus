@@ -1,0 +1,14 @@
+{
+    "reply": {
+        "contents": {
+            "scan": {
+                "owner": "admin",
+                "scan_name": "localhost scan",
+                "start_time": "1391873151",
+                "uuid": "f4f71476-9297-49be-76ed-bac6c4d890ee110ef9d2c656c3a0"
+            }
+        },
+        "seq": "1624246937",
+        "status": "OK"
+    }
+}

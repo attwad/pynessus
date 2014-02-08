@@ -393,6 +393,86 @@ class Nessus(object):
   def _AddUserDone(callback, contents):
     return contents['user']
 
+  def ListPolicies(self, callback=None):
+    data = {
+      'seq': random.randint(1, _MAX_SEQ),
+    }
+    request = self._BuildRequest('/policy/list', data)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ListPoliciesDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ListPoliciesDone(callback, future)
+
+  @staticmethod
+  @FutureCallback
+  def _ListPoliciesDone(callback, contents):
+    return contents['policies']
+
+  def NewScan(self, targets, policy_id, scan_name, callback=None):
+    data = {
+      'seq': random.randint(1, _MAX_SEQ),
+      'target': ','.join(targets),
+      'policy_id': policy_id,
+      'scan_name': scan_name,
+    }
+    request = self._BuildRequest('/scan/new', data)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._NewScanDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._NewScanDone(callback, future)
+
+  @staticmethod
+  @FutureCallback
+  def _NewScanDone(callback, contents):
+    return contents['scan']
+
+  def ListReports(self, callback=None):
+    data = {
+      'seq': random.randint(1, _MAX_SEQ),
+    }
+    request = self._BuildRequest('/report/list', data)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._ListReportsDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._ListReportsDone(callback, future)
+
+  @staticmethod
+  @FutureCallback
+  def _ListReportsDone(callback, contents):
+    return contents['reports']
+
+  def GetReport(self, uuid, callback=None):
+    data = {
+      'seq': random.randint(1, _MAX_SEQ),
+      'report': uuid,
+    }
+    request = self._BuildRequest('/file/report/download', data)
+    future = self._executor.submit(self._SendRawRequest, request, self._dump_path)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._GetReportDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._GetReportDone(callback, future)
+
+  @staticmethod
+  @FutureCallback
+  def _GetReportDone(callback, contents):
+    return contents
+
 
 if __name__ == '__main__':
   logging.basicConfig(
@@ -415,3 +495,8 @@ if __name__ == '__main__':
     #logging.info(nessus.ListPluginsAttributes())
     #logging.info(nessus.ListPluginsInFamily('General'))
     #logging.info(nessus.AddUser('adm12', 'testpass', False))
+    #TODO(timothe): add policy list/add
+    #logging.info(nessus.ListPolicies())
+    #logging.info(nessus.NewScan(['192.168.0.1'], '-1', 'localhost scan'))
+    #logging.info(nessus.ListReports())
+    logging.info(nessus.GetReport("f4f71476-9297-49be-76ed-bac6c4d890ee110ef9d2c656c3a0"))

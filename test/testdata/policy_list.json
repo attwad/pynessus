@@ -1,0 +1,2755 @@
+{
+    "reply": {
+        "contents": {
+            "policies": {
+                "policy": {
+                    "policycontents": {
+                        "familyselection": {
+                            "familyitem": [
+                                {
+                                    "familyname": "MacOS X Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "DNS",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Gain a shell remotely",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Solaris Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Port scanners",
+                                    "status": "mixed"
+                                },
+                                {
+                                    "familyname": "Web Servers",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "SMTP problems",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Service detection",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "CGI abuses : XSS",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Mandriva Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Databases",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Debian Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Denial of Service",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Default Unix Accounts",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Settings",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "HP-UX Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Backdoors",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "VMware ESX Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "SCADA",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "General",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Oracle Linux Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Red Hat Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "FreeBSD Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "CGI abuses",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Windows : User management",
+                                    "status": "disabled"
+                                },
+                                {
+                                    "familyname": "Netware",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Amazon Linux Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Peer-To-Peer File Sharing",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Slackware Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "SNMP",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Fedora Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Gentoo Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Ubuntu Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Misc.",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "FTP",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Firewalls",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Windows : Microsoft Bulletins",
+                                    "status": "disabled"
+                                },
+                                {
+                                    "familyname": "Junos Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Mobile Devices",
+                                    "status": "disabled"
+                                },
+                                {
+                                    "familyname": "Windows",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Policy Compliance",
+                                    "status": "disabled"
+                                },
+                                {
+                                    "familyname": "SuSE Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "RPC",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "CentOS Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "CISCO",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "Scientific Linux Local Security Checks",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "familyname": "AIX Local Security Checks",
+                                    "status": "enabled"
+                                }
+                            ]
+                        },
+                        "individualpluginselection": {
+                            "pluginitem": [
+                                {
+                                    "family": "Port scanners",
+                                    "pluginid": "14274",
+                                    "pluginname": "Nessus SNMP Scanner",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "family": "Port scanners",
+                                    "pluginid": "10180",
+                                    "pluginname": "Ping the remote host",
+                                    "status": "enabled"
+                                },
+                                {
+                                    "family": "Port scanners",
+                                    "pluginid": "11219",
+                                    "pluginname": "Nessus SYN scanner",
+                                    "status": "enabled"
+                                }
+                            ]
+                        },
+                        "policycomments": null,
+                        "preferences": {
+                            "pluginspreferences": {
+                                "item": [
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Controller :",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Controller :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain :",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Username :",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Username :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[password]:Domain Password :",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Controller 2:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Controller 2:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain 2:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain 2:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Username 2:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Username 2:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[password]:Domain Password 2:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Password 2:",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Controller 3:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Controller 3:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain 3:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain 3:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Username 3:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Username 3:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[password]:Domain Password 3:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Password 3:",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Controller 4:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Controller 4:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain 4:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain 4:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Username 4:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Username 4:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[password]:Domain Password 4:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Password 4:",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Controller 5:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Controller 5:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain 5:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain 5:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[entry]:Domain Username 5:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Username 5:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "ADSI Settings[password]:Domain Password 5:",
+                                        "pluginid": "60024",
+                                        "pluginname": "ADSI Settings",
+                                        "preferencename": "Domain Password 5:",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Antivirus Software Check[entry]:Delay (in days, between 0 and 7) :",
+                                        "pluginid": "16193",
+                                        "pluginname": "Antivirus Software Check",
+                                        "preferencename": "Delay (in days, between 0 and 7) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "0"
+                                    },
+                                    {
+                                        "fullname": "Apple Profile Manager API Settings[entry]:Apple Profile Manager server :",
+                                        "pluginid": "60032",
+                                        "pluginname": "Apple Profile Manager API Settings",
+                                        "preferencename": "Apple Profile Manager server :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Apple Profile Manager API Settings[entry]:Apple Profile Manager port :",
+                                        "pluginid": "60032",
+                                        "pluginname": "Apple Profile Manager API Settings",
+                                        "preferencename": "Apple Profile Manager port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "443"
+                                    },
+                                    {
+                                        "fullname": "Apple Profile Manager API Settings[entry]:Apple Profile Manager username :",
+                                        "pluginid": "60032",
+                                        "pluginname": "Apple Profile Manager API Settings",
+                                        "preferencename": "Apple Profile Manager username :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Apple Profile Manager API Settings[password]:Apple Profile Manager password :",
+                                        "pluginid": "60032",
+                                        "pluginname": "Apple Profile Manager API Settings",
+                                        "preferencename": "Apple Profile Manager password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Apple Profile Manager API Settings[checkbox]:SSL :",
+                                        "pluginid": "60032",
+                                        "pluginname": "Apple Profile Manager API Settings",
+                                        "preferencename": "SSL :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Apple Profile Manager API Settings[checkbox]:Verify SSL Certificate :",
+                                        "pluginid": "60032",
+                                        "pluginname": "Apple Profile Manager API Settings",
+                                        "preferencename": "Verify SSL Certificate :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Apple Profile Manager API Settings[checkbox]:Force Device Updates :",
+                                        "pluginid": "60032",
+                                        "pluginname": "Apple Profile Manager API Settings",
+                                        "preferencename": "Force Device Updates :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Apple Profile Manager API Settings[entry]:Device Update Timeout (Minutes) :",
+                                        "pluginid": "60032",
+                                        "pluginname": "Apple Profile Manager API Settings",
+                                        "preferencename": "Device Update Timeout (Minutes) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "5"
+                                    },
+                                    {
+                                        "fullname": "Cleartext protocols settings[entry]:User name :",
+                                        "pluginid": "21744",
+                                        "pluginname": "Cleartext protocols settings",
+                                        "preferencename": "User name :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Cleartext protocols settings[password]:Password (unsafe!) :",
+                                        "pluginid": "21744",
+                                        "pluginname": "Cleartext protocols settings",
+                                        "preferencename": "Password (unsafe!) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Cleartext protocols settings[checkbox]:Try to perform patch level checks over telnet",
+                                        "pluginid": "21744",
+                                        "pluginname": "Cleartext protocols settings",
+                                        "preferencename": "Try to perform patch level checks over telnet",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Cleartext protocols settings[checkbox]:Try to perform patch level checks over rsh",
+                                        "pluginid": "21744",
+                                        "pluginname": "Cleartext protocols settings",
+                                        "preferencename": "Try to perform patch level checks over rsh",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Cleartext protocols settings[checkbox]:Try to perform patch level checks over rexec",
+                                        "pluginid": "21744",
+                                        "pluginname": "Cleartext protocols settings",
+                                        "preferencename": "Try to perform patch level checks over rexec",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Database settings[entry]:Login :",
+                                        "pluginid": "33815",
+                                        "pluginname": "Database settings",
+                                        "preferencename": "Login :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Database settings[password]:Password :",
+                                        "pluginid": "33815",
+                                        "pluginname": "Database settings",
+                                        "preferencename": "Password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Database settings[radio]:DB Type :",
+                                        "pluginid": "33815",
+                                        "pluginname": "Database settings",
+                                        "preferencename": "DB Type :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Oracle;SQL Server;MySQL;DB2;Informix/DRDA;PostgreSQL"
+                                    },
+                                    {
+                                        "fullname": "Database settings[entry]:Database SID :",
+                                        "pluginid": "33815",
+                                        "pluginname": "Database settings",
+                                        "preferencename": "Database SID :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Database settings[entry]:Database port to use :",
+                                        "pluginid": "33815",
+                                        "pluginname": "Database settings",
+                                        "preferencename": "Database port to use :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Database settings[radio]:Oracle auth type:",
+                                        "pluginid": "33815",
+                                        "pluginname": "Database settings",
+                                        "preferencename": "Oracle auth type:",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "NORMAL;SYSOPER;SYSDBA"
+                                    },
+                                    {
+                                        "fullname": "Database settings[radio]:SQL Server auth type:",
+                                        "pluginid": "33815",
+                                        "pluginname": "Database settings",
+                                        "preferencename": "SQL Server auth type:",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Windows;SQL"
+                                    },
+                                    {
+                                        "fullname": "Do not scan fragile devices[checkbox]:Scan Network Printers",
+                                        "pluginid": "22481",
+                                        "pluginname": "Do not scan fragile devices",
+                                        "preferencename": "Scan Network Printers",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Do not scan fragile devices[checkbox]:Scan Novell Netware hosts",
+                                        "pluginid": "22481",
+                                        "pluginname": "Do not scan fragile devices",
+                                        "preferencename": "Scan Novell Netware hosts",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Service Detection[radio]:Test SSL based services",
+                                        "pluginid": "22964",
+                                        "pluginname": "Service Detection",
+                                        "preferencename": "Test SSL based services",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Known SSL ports;All;None"
+                                    },
+                                    {
+                                        "fullname": "Good MDM Settings[entry]:GMC Server :",
+                                        "pluginid": "66963",
+                                        "pluginname": "Good MDM Settings",
+                                        "preferencename": "GMC Server :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Good MDM Settings[entry]:Port :",
+                                        "pluginid": "66963",
+                                        "pluginname": "Good MDM Settings",
+                                        "preferencename": "Port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Good MDM Settings[entry]:Domain :",
+                                        "pluginid": "66963",
+                                        "pluginname": "Good MDM Settings",
+                                        "preferencename": "Domain :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Good MDM Settings[entry]:Username :",
+                                        "pluginid": "66963",
+                                        "pluginname": "Good MDM Settings",
+                                        "preferencename": "Username :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Good MDM Settings[password]:Password :",
+                                        "pluginid": "66963",
+                                        "pluginname": "Good MDM Settings",
+                                        "preferencename": "Password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Good MDM Settings[checkbox]:SSL :",
+                                        "pluginid": "66963",
+                                        "pluginname": "Good MDM Settings",
+                                        "preferencename": "SSL :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Good MDM Settings[checkbox]:Verify SSL Certificate :",
+                                        "pluginid": "66963",
+                                        "pluginname": "Good MDM Settings",
+                                        "preferencename": "Verify SSL Certificate :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[checkbox]:Probe services on every port",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "Probe services on every port",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[checkbox]:Do not log in with user accounts not specified in the policy",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "Do not log in with user accounts not specified in the policy",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[checkbox]:Enable CGI scanning",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "Enable CGI scanning",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[radio]:Network type",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "Network type",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Mixed (use RFC 1918);Private LAN;Public WAN (Internet)"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[checkbox]:Enable experimental scripts",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "Enable experimental scripts",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[checkbox]:Thorough tests (slow)",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "Thorough tests (slow)",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[radio]:Report verbosity",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "Report verbosity",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Normal;Quiet;Verbose"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[radio]:Report paranoia",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "Report paranoia",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Normal;Avoid false alarms;Paranoid (more false alarms)"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[entry]:HTTP User-Agent",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "HTTP User-Agent",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)"
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[file]:SSL certificate to use :",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "SSL certificate to use :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[file]:SSL CA to trust :",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "SSL CA to trust :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[file]:SSL key to use :",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "SSL key to use :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[password]:SSL password for SSL key :",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "SSL password for SSL key :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Global variable settings[checkbox]:Enumerate all SSL ciphers",
+                                        "pluginid": "12288",
+                                        "pluginname": "Global variable settings",
+                                        "preferencename": "Enumerate all SSL ciphers",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "HTTP cookies import[file]:Cookies file :",
+                                        "pluginid": "42893",
+                                        "pluginname": "HTTP cookies import",
+                                        "preferencename": "Cookies file :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[entry]:Login page :",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Login page :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "/"
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[entry]:Login form :",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Login form :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[entry]:Login form fields :",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Login form fields :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "user=%USER% & pass=%PASS%"
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[radio]:Login form method :",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Login form method :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "POST;GET"
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[checkbox]:Automated login page search",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Automated login page search",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[entry]:Re-authenticate delay (seconds) :",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Re-authenticate delay (seconds) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[entry]:Check authentication on page :",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Check authentication on page :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[entry]:Follow 30x redirections (# of levels) :",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Follow 30x redirections (# of levels) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "2"
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[entry]:Authenticated regex :",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Authenticated regex :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[checkbox]:Invert test (disconnected if regex matches)",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Invert test (disconnected if regex matches)",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[checkbox]:Match regex on HTTP headers",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Match regex on HTTP headers",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[checkbox]:Case insensitive regex",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Case insensitive regex",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "HTTP login page[checkbox]:Abort web application tests if login fails",
+                                        "pluginid": "11149",
+                                        "pluginname": "HTTP login page",
+                                        "preferencename": "Abort web application tests if login fails",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings[entry]:Web Reports Server :",
+                                        "pluginid": "62558",
+                                        "pluginname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings",
+                                        "preferencename": "Web Reports Server :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings[entry]:Web Reports Port :",
+                                        "pluginid": "62558",
+                                        "pluginname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings",
+                                        "preferencename": "Web Reports Port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings[entry]:Web Reports Username :",
+                                        "pluginid": "62558",
+                                        "pluginname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings",
+                                        "preferencename": "Web Reports Username :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings[password]:Web Reports Password :",
+                                        "pluginid": "62558",
+                                        "pluginname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings",
+                                        "preferencename": "Web Reports Password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings[checkbox]:SSL :",
+                                        "pluginid": "62558",
+                                        "pluginname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings",
+                                        "preferencename": "SSL :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings[checkbox]:Verify SSL Certificate :",
+                                        "pluginid": "62558",
+                                        "pluginname": "Patch Management: IBM Tivoli Endpoint Manager Server Settings",
+                                        "preferencename": "Verify SSL Certificate :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "IBM iSeries Credentials[entry]:Login :",
+                                        "pluginid": "57861",
+                                        "pluginname": "IBM iSeries Credentials",
+                                        "preferencename": "Login :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "IBM iSeries Credentials[password]:Password :",
+                                        "pluginid": "57861",
+                                        "pluginname": "IBM iSeries Credentials",
+                                        "preferencename": "Password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Kerberos configuration[entry]:Kerberos Key Distribution Center (KDC) :",
+                                        "pluginid": "17351",
+                                        "pluginname": "Kerberos configuration",
+                                        "preferencename": "Kerberos Key Distribution Center (KDC) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Kerberos configuration[entry]:Kerberos KDC Port :",
+                                        "pluginid": "17351",
+                                        "pluginname": "Kerberos configuration",
+                                        "preferencename": "Kerberos KDC Port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "88"
+                                    },
+                                    {
+                                        "fullname": "Kerberos configuration[radio]:Kerberos KDC Transport :",
+                                        "pluginid": "17351",
+                                        "pluginname": "Kerberos configuration",
+                                        "preferencename": "Kerberos KDC Transport :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "tcp;udp"
+                                    },
+                                    {
+                                        "fullname": "Kerberos configuration[entry]:Kerberos Realm (SSH only) :",
+                                        "pluginid": "17351",
+                                        "pluginname": "Kerberos configuration",
+                                        "preferencename": "Kerberos Realm (SSH only) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "LDAP ' Domain Admins ' Group Membership Enumeration[entry]:LDAP user :",
+                                        "pluginid": "58038",
+                                        "pluginname": "LDAP ' Domain Admins ' Group Membership Enumeration",
+                                        "preferencename": "LDAP user :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "LDAP ' Domain Admins ' Group Membership Enumeration[password]:LDAP password :",
+                                        "pluginid": "58038",
+                                        "pluginname": "LDAP ' Domain Admins ' Group Membership Enumeration",
+                                        "preferencename": "LDAP password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "LDAP ' Domain Admins ' Group Membership Enumeration[entry]:Max results :",
+                                        "pluginid": "58038",
+                                        "pluginname": "LDAP ' Domain Admins ' Group Membership Enumeration",
+                                        "preferencename": "Max results :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "1000"
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:HTTP account :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "HTTP account :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:HTTP password (sent in clear) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "HTTP password (sent in clear) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:NNTP account :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "NNTP account :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:NNTP password (sent in clear) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "NNTP password (sent in clear) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:FTP account :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "FTP account :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "anonymous"
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:FTP password (sent in clear) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "FTP password (sent in clear) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": "nessus@nessus.org"
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:FTP writeable directory :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "FTP writeable directory :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "/incoming"
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:POP2 account :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "POP2 account :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:POP2 password (sent in clear) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "POP2 password (sent in clear) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:POP3 account :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "POP3 account :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:POP3 password (sent in clear) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "POP3 password (sent in clear) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:IMAP account :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "IMAP account :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:IMAP password (sent in clear) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "IMAP password (sent in clear) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:IPMI account :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "IPMI account :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:IPMI password (sent in clear) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "IPMI password (sent in clear) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:SMB account :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "SMB account :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:SMB password :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "SMB password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:SMB domain (optional) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "SMB domain (optional) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[radio]:SMB password type :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "SMB password type :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Password;LM Hash;NTLM Hash"
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:Additional SMB account (1) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Additional SMB account (1) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:Additional SMB password (1) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Additional SMB password (1) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:Additional SMB domain (optional) (1) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Additional SMB domain (optional) (1) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:Additional SMB account (2) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Additional SMB account (2) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:Additional SMB password (2) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Additional SMB password (2) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:Additional SMB domain (optional) (2) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Additional SMB domain (optional) (2) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:Additional SMB account (3) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Additional SMB account (3) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[password]:Additional SMB password (3) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Additional SMB password (3) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[entry]:Additional SMB domain (optional) (3) :",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Additional SMB domain (optional) (3) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Login configurations[checkbox]:Never send SMB credentials in clear text",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Never send SMB credentials in clear text",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Login configurations[checkbox]:Only use NTLMv2",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Only use NTLMv2",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Login configurations[checkbox]:Only use Kerberos authentication for SMB",
+                                        "pluginid": "10870",
+                                        "pluginname": "Login configurations",
+                                        "preferencename": "Only use Kerberos authentication for SMB",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Nessus TCP scanner[radio]:Firewall detection :",
+                                        "pluginid": "10335",
+                                        "pluginname": "Nessus TCP scanner",
+                                        "preferencename": "Firewall detection :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Automatic (normal);Disabled (softer);Do not detect RST rate limitation (soft);Ignore closed ports (aggressive)"
+                                    },
+                                    {
+                                        "fullname": "Nessus SYN scanner[radio]:Firewall detection :",
+                                        "pluginid": "11219",
+                                        "pluginname": "Nessus SYN scanner",
+                                        "preferencename": "Firewall detection :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Automatic (normal);Disabled (softer);Do not detect RST rate limitation (soft);Ignore closed ports (aggressive)"
+                                    },
+                                    {
+                                        "fullname": "Oracle Settings[entry]:Oracle SID :",
+                                        "pluginid": "22076",
+                                        "pluginname": "Oracle Settings",
+                                        "preferencename": "Oracle SID :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Oracle Settings[checkbox]:Test default accounts (slow)",
+                                        "pluginid": "22076",
+                                        "pluginname": "Oracle Settings",
+                                        "preferencename": "Test default accounts (slow)",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Palo Alto Networks PAN-OS Settings[entry]:Palo Alto Username :",
+                                        "pluginid": "64286",
+                                        "pluginname": "Palo Alto Networks PAN-OS Settings",
+                                        "preferencename": "Palo Alto Username :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Palo Alto Networks PAN-OS Settings[password]:Palo Alto Password :",
+                                        "pluginid": "64286",
+                                        "pluginname": "Palo Alto Networks PAN-OS Settings",
+                                        "preferencename": "Palo Alto Password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Palo Alto Networks PAN-OS Settings[entry]:Palo Alto Port :",
+                                        "pluginid": "64286",
+                                        "pluginname": "Palo Alto Networks PAN-OS Settings",
+                                        "preferencename": "Palo Alto Port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "443"
+                                    },
+                                    {
+                                        "fullname": "Palo Alto Networks PAN-OS Settings[checkbox]:Verify SSL Certificate :",
+                                        "pluginid": "64286",
+                                        "pluginname": "Palo Alto Networks PAN-OS Settings",
+                                        "preferencename": "Verify SSL Certificate :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Patch Report[checkbox]:Display the superseded patches in the report",
+                                        "pluginid": "66334",
+                                        "pluginname": "Patch Report",
+                                        "preferencename": "Display the superseded patches in the report",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[entry]:TCP ping destination port(s) :",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "TCP ping destination port(s) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "built-in"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[checkbox]:Do an ARP ping",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "Do an ARP ping",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[checkbox]:Do a TCP ping",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "Do a TCP ping",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[checkbox]:Do an ICMP ping",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "Do an ICMP ping",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[entry]:Number of retries (ICMP) :",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "Number of retries (ICMP) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "2"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[checkbox]:Do an applicative UDP ping (DNS,RPC...)",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "Do an applicative UDP ping (DNS,RPC...)",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[checkbox]:Make the dead hosts appear in the report",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "Make the dead hosts appear in the report",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[checkbox]:Log live hosts in the report",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "Log live hosts in the report",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[checkbox]:Test the local Nessus host",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "Test the local Nessus host",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Ping the remote host[checkbox]:Fast network discovery",
+                                        "pluginid": "10180",
+                                        "pluginname": "Ping the remote host",
+                                        "preferencename": "Fast network discovery",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Port scanners settings[checkbox]:Check open TCP ports found by local port enumerators",
+                                        "pluginid": "33812",
+                                        "pluginname": "Port scanners settings",
+                                        "preferencename": "Check open TCP ports found by local port enumerators",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Port scanners settings[checkbox]:Only run network port scanners if local port enumeration failed",
+                                        "pluginid": "33812",
+                                        "pluginname": "Port scanners settings",
+                                        "preferencename": "Only run network port scanners if local port enumeration failed",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: Red Hat Satellite Server Settings[entry]:Red Hat Satellite server(s) [separated w/ semicolons] :",
+                                        "pluginid": "57063",
+                                        "pluginname": "Patch Management: Red Hat Satellite Server Settings",
+                                        "preferencename": "Red Hat Satellite server(s) [separated w/ semicolons] :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: Red Hat Satellite Server Settings[entry]:Red Hat Satellite port(s) :",
+                                        "pluginid": "57063",
+                                        "pluginname": "Patch Management: Red Hat Satellite Server Settings",
+                                        "preferencename": "Red Hat Satellite port(s) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "443"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: Red Hat Satellite Server Settings[checkbox]:Verify SSL certificates :",
+                                        "pluginid": "57063",
+                                        "pluginname": "Patch Management: Red Hat Satellite Server Settings",
+                                        "preferencename": "Verify SSL certificates :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: Red Hat Satellite Server Settings[entry]:Red Hat Satellite username(s) :",
+                                        "pluginid": "57063",
+                                        "pluginname": "Patch Management: Red Hat Satellite Server Settings",
+                                        "preferencename": "Red Hat Satellite username(s) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: Red Hat Satellite Server Settings[password]:Red Hat Satellite password(s) :",
+                                        "pluginid": "57063",
+                                        "pluginname": "Patch Management: Red Hat Satellite Server Settings",
+                                        "preferencename": "Red Hat Satellite password(s) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[file]:SCAP File (zip) #1 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #1 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:SCAP Version #1 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Version #1 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #1 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #1 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #1 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #1 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Profile ID #1 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #1 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:OVAL Result Type #1 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "OVAL Result Type #1 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[file]:SCAP File (zip) #2 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #2 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:SCAP Version #2 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Version #2 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #2 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #2 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #2 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #2 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Profile ID #2 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #2 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:OVAL Result Type #2 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "OVAL Result Type #2 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[file]:SCAP File (zip) #3 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #3 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:SCAP Version #3 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Version #3 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #3 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #3 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #3 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #3 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Profile ID #3 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #3 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:OVAL Result Type #3 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "OVAL Result Type #3 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[file]:SCAP File (zip) #4 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #4 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:SCAP Version #4 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Version #4 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #4 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #4 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #4 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #4 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Profile ID #4 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #4 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:OVAL Result Type #4 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "OVAL Result Type #4 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[file]:SCAP File (zip) #5 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #5 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:SCAP Version #5 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Version #5 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #5 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #5 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Benchmark ID #5 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #5 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[entry]:SCAP Profile ID #5 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #5 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Linux Compliance Checks[radio]:OVAL Result Type #5 :",
+                                        "pluginid": "66757",
+                                        "pluginname": "SCAP Linux Compliance Checks",
+                                        "preferencename": "OVAL Result Type #5 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[file]:SCAP File (zip) #1 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #1 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:SCAP Version #1 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Version #1 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #1 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #1 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #1 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #1 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Profile ID #1 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #1 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:OVAL Result Type #1 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "OVAL Result Type #1 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[file]:SCAP File (zip) #2 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #2 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:SCAP Version #2 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Version #2 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #2 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #2 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #2 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #2 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Profile ID #2 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #2 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:OVAL Result Type #2 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "OVAL Result Type #2 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[file]:SCAP File (zip) #3 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #3 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:SCAP Version #3 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Version #3 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #3 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #3 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #3 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #3 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Profile ID #3 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #3 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:OVAL Result Type #3 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "OVAL Result Type #3 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[file]:SCAP File (zip) #4 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #4 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:SCAP Version #4 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Version #4 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #4 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #4 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #4 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #4 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Profile ID #4 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #4 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:OVAL Result Type #4 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "OVAL Result Type #4 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[file]:SCAP File (zip) #5 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP File (zip) #5 :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:SCAP Version #5 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Version #5 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "1.2;1.1;1.0"
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Data Stream ID (1.2 only) #5 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Data Stream ID (1.2 only) #5 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Benchmark ID #5 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Benchmark ID #5 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[entry]:SCAP Profile ID #5 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "SCAP Profile ID #5 :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SCAP Windows Compliance Checks[radio]:OVAL Result Type #5 :",
+                                        "pluginid": "66756",
+                                        "pluginname": "SCAP Windows Compliance Checks",
+                                        "preferencename": "OVAL Result Type #5 :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Full results w/ system characteristics;Full results w/o system characteristics;Thin results"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: SCCM Server Settings[entry]:SCCM Server :",
+                                        "pluginid": "57029",
+                                        "pluginname": "Patch Management: SCCM Server Settings",
+                                        "preferencename": "SCCM Server :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: SCCM Server Settings[entry]:SCCM Domain :",
+                                        "pluginid": "57029",
+                                        "pluginname": "Patch Management: SCCM Server Settings",
+                                        "preferencename": "SCCM Domain :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: SCCM Server Settings[entry]:SCCM Username :",
+                                        "pluginid": "57029",
+                                        "pluginname": "Patch Management: SCCM Server Settings",
+                                        "preferencename": "SCCM Username :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: SCCM Server Settings[password]:SCCM Password :",
+                                        "pluginid": "57029",
+                                        "pluginname": "Patch Management: SCCM Server Settings",
+                                        "preferencename": "SCCM Password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: VMware Go Server Settings[entry]:Host :",
+                                        "pluginid": "57026",
+                                        "pluginname": "Patch Management: VMware Go Server Settings",
+                                        "preferencename": "Host :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "services.shavlik.com"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: VMware Go Server Settings[entry]:Port :",
+                                        "pluginid": "57026",
+                                        "pluginname": "Patch Management: VMware Go Server Settings",
+                                        "preferencename": "Port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "443"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: VMware Go Server Settings[entry]:Username :",
+                                        "pluginid": "57026",
+                                        "pluginname": "Patch Management: VMware Go Server Settings",
+                                        "preferencename": "Username :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: VMware Go Server Settings[password]:Password :",
+                                        "pluginid": "57026",
+                                        "pluginname": "Patch Management: VMware Go Server Settings",
+                                        "preferencename": "Password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: VMware Go Server Settings[entry]:Domain :",
+                                        "pluginid": "57026",
+                                        "pluginname": "Patch Management: VMware Go Server Settings",
+                                        "preferencename": "Domain :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: VMware Go Server Settings[entry]:API path :",
+                                        "pluginid": "57026",
+                                        "pluginname": "Patch Management: VMware Go Server Settings",
+                                        "preferencename": "API path :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "/api/authenticationbroker/account/httpIssue.svc/"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: VMware Go Server Settings[entry]:Authentication realm :",
+                                        "pluginid": "57026",
+                                        "pluginname": "Patch Management: VMware Go Server Settings",
+                                        "preferencename": "Authentication realm :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "https://services.shavlik.com/api/dataservices/v1r1/default.aspx"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: VMware Go Server Settings[entry]:Service path :",
+                                        "pluginid": "57026",
+                                        "pluginname": "Patch Management: VMware Go Server Settings",
+                                        "preferencename": "Service path :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "/api/dataservices/v1r1/OData.svc/"
+                                    },
+                                    {
+                                        "fullname": "SMB Use Host SID to Enumerate Local Users[entry]:Start UID :",
+                                        "pluginid": "10860",
+                                        "pluginname": "SMB Use Host SID to Enumerate Local Users",
+                                        "preferencename": "Start UID :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "1000"
+                                    },
+                                    {
+                                        "fullname": "SMB Use Host SID to Enumerate Local Users[entry]:End UID :",
+                                        "pluginid": "10860",
+                                        "pluginname": "SMB Use Host SID to Enumerate Local Users",
+                                        "preferencename": "End UID :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "1200"
+                                    },
+                                    {
+                                        "fullname": "SMB Scope[checkbox]:Request information about the domain",
+                                        "pluginid": "10917",
+                                        "pluginname": "SMB Scope",
+                                        "preferencename": "Request information about the domain",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "SMB Use Domain SID to Enumerate Users[entry]:Start UID :",
+                                        "pluginid": "10399",
+                                        "pluginname": "SMB Use Domain SID to Enumerate Users",
+                                        "preferencename": "Start UID :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "1000"
+                                    },
+                                    {
+                                        "fullname": "SMB Use Domain SID to Enumerate Users[entry]:End UID :",
+                                        "pluginid": "10399",
+                                        "pluginname": "SMB Use Domain SID to Enumerate Users",
+                                        "preferencename": "End UID :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "1200"
+                                    },
+                                    {
+                                        "fullname": "SMTP settings[entry]:Third party domain :",
+                                        "pluginid": "11038",
+                                        "pluginname": "SMTP settings",
+                                        "preferencename": "Third party domain :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "example.com"
+                                    },
+                                    {
+                                        "fullname": "SMTP settings[entry]:From address :",
+                                        "pluginid": "11038",
+                                        "pluginname": "SMTP settings",
+                                        "preferencename": "From address :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "nobody@example.com"
+                                    },
+                                    {
+                                        "fullname": "SMTP settings[entry]:To address :",
+                                        "pluginid": "11038",
+                                        "pluginname": "SMTP settings",
+                                        "preferencename": "To address :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "postmaster@[AUTO_REPLACED_IP]"
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[entry]:Community name :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "Community name :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "public"
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[entry]:Community name (1) :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "Community name (1) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[entry]:Community name (2) :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "Community name (2) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[entry]:Community name (3) :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "Community name (3) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[entry]:UDP port :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "UDP port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "161"
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[entry]:SNMPv3 user name :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "SNMPv3 user name :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[password]:SNMPv3 authentication password :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "SNMPv3 authentication password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[radio]:SNMPv3 authentication algorithm :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "SNMPv3 authentication algorithm :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "MD5;SHA1"
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[password]:SNMPv3 privacy password :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "SNMPv3 privacy password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SNMP settings[radio]:SNMPv3 privacy algorithm :",
+                                        "pluginid": "19762",
+                                        "pluginname": "SNMP settings",
+                                        "preferencename": "SNMPv3 privacy algorithm :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "AES;DES"
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:SSH user name :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "SSH user name :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "root"
+                                    },
+                                    {
+                                        "fullname": "SSH settings[password]:SSH password (unsafe!) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "SSH password (unsafe!) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[file]:SSH public key to use :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "SSH public key to use :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[file]:SSH private key to use :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "SSH private key to use :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[password]:Passphrase for SSH key :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Passphrase for SSH key :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[radio]:Elevate privileges with :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Elevate privileges with :",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "Nothing;sudo;su;su+sudo;dzdo;pbrun;Cisco ' enable '"
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:Privilege elevation binary path (directory) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Privilege elevation binary path (directory) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:su login :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "su login :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:Escalation account :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Escalation account :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "root"
+                                    },
+                                    {
+                                        "fullname": "SSH settings[password]:Escalation password :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Escalation password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[file]:SSH known_hosts file :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "SSH known_hosts file :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:Preferred SSH port :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Preferred SSH port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "22"
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:Client version :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Client version :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "OpenSSH_5.0"
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:Additional SSH user name (1) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH user name (1) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[password]:Additional SSH password (1) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH password (1) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:Additional SSH user name (2) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH user name (2) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[password]:Additional SSH password (2) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH password (2) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:Additional SSH user name (3) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH user name (3) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[password]:Additional SSH password (3) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH password (3) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:Additional SSH user name (4) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH user name (4) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[password]:Additional SSH password (4) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH password (4) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[entry]:Additional SSH user name (5) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH user name (5) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SSH settings[password]:Additional SSH password (5) :",
+                                        "pluginid": "14273",
+                                        "pluginname": "SSH settings",
+                                        "preferencename": "Additional SSH password (5) :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "SMB Registry : Start the Registry Service during the scan[checkbox]:Start the registry service during the scan",
+                                        "pluginid": "35703",
+                                        "pluginname": "SMB Registry : Start the Registry Service during the scan",
+                                        "preferencename": "Start the registry service during the scan",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "SMB Registry : Start the Registry Service during the scan[checkbox]:Enable administrative shares during the scan",
+                                        "pluginid": "35703",
+                                        "pluginname": "SMB Registry : Start the Registry Service during the scan",
+                                        "preferencename": "Enable administrative shares during the scan",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "VMware SOAP API Settings[entry]:VMware user name :",
+                                        "pluginid": "57395",
+                                        "pluginname": "VMware SOAP API Settings",
+                                        "preferencename": "VMware user name :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "VMware SOAP API Settings[password]:VMware password :",
+                                        "pluginid": "57395",
+                                        "pluginname": "VMware SOAP API Settings",
+                                        "preferencename": "VMware password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "VMware SOAP API Settings[checkbox]:Ignore SSL Certificate :",
+                                        "pluginid": "57395",
+                                        "pluginname": "VMware SOAP API Settings",
+                                        "preferencename": "Ignore SSL Certificate :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "VMware vCenter SOAP API Settings[entry]:VMware vCenter host :",
+                                        "pluginid": "63060",
+                                        "pluginname": "VMware vCenter SOAP API Settings",
+                                        "preferencename": "VMware vCenter host :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "VMware vCenter SOAP API Settings[entry]:VMware vCenter port :",
+                                        "pluginid": "63060",
+                                        "pluginname": "VMware vCenter SOAP API Settings",
+                                        "preferencename": "VMware vCenter port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "443"
+                                    },
+                                    {
+                                        "fullname": "VMware vCenter SOAP API Settings[entry]:VMware vCenter user name :",
+                                        "pluginid": "63060",
+                                        "pluginname": "VMware vCenter SOAP API Settings",
+                                        "preferencename": "VMware vCenter user name :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "VMware vCenter SOAP API Settings[password]:VMware vCenter password :",
+                                        "pluginid": "63060",
+                                        "pluginname": "VMware vCenter SOAP API Settings",
+                                        "preferencename": "VMware vCenter password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "VMware vCenter SOAP API Settings[checkbox]:SSL :",
+                                        "pluginid": "63060",
+                                        "pluginname": "VMware vCenter SOAP API Settings",
+                                        "preferencename": "SSL :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "yes"
+                                    },
+                                    {
+                                        "fullname": "VMware vCenter SOAP API Settings[checkbox]:Verify SSL Certificate :",
+                                        "pluginid": "63060",
+                                        "pluginname": "VMware vCenter SOAP API Settings",
+                                        "preferencename": "Verify SSL Certificate :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Web Application Tests Settings[checkbox]:Enable web applications tests",
+                                        "pluginid": "39471",
+                                        "pluginname": "Web Application Tests Settings",
+                                        "preferencename": "Enable web applications tests",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Web Application Tests Settings[entry]:Maximum run time (min) :",
+                                        "pluginid": "39471",
+                                        "pluginname": "Web Application Tests Settings",
+                                        "preferencename": "Maximum run time (min) :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "60"
+                                    },
+                                    {
+                                        "fullname": "Web Application Tests Settings[checkbox]:Try all HTTP methods",
+                                        "pluginid": "39471",
+                                        "pluginname": "Web Application Tests Settings",
+                                        "preferencename": "Try all HTTP methods",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Web Application Tests Settings[radio]:Combinations of arguments values",
+                                        "pluginid": "39471",
+                                        "pluginname": "Web Application Tests Settings",
+                                        "preferencename": "Combinations of arguments values",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "one value;some pairs;all pairs (slower but efficient);some combinations;all combinations (extremely slow)"
+                                    },
+                                    {
+                                        "fullname": "Web Application Tests Settings[checkbox]:HTTP Parameter Pollution",
+                                        "pluginid": "39471",
+                                        "pluginname": "Web Application Tests Settings",
+                                        "preferencename": "HTTP Parameter Pollution",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Web Application Tests Settings[radio]:Stop at first flaw",
+                                        "pluginid": "39471",
+                                        "pluginname": "Web Application Tests Settings",
+                                        "preferencename": "Stop at first flaw",
+                                        "preferencetype": "radio",
+                                        "preferencevalues": "per CGI;per port (quicker);per parameter (slow);look for all flaws (slower)"
+                                    },
+                                    {
+                                        "fullname": "Web Application Tests Settings[checkbox]:Test embedded web servers",
+                                        "pluginid": "39471",
+                                        "pluginname": "Web Application Tests Settings",
+                                        "preferencename": "Test embedded web servers",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Web Application Tests Settings[entry]:URL for Remote File Inclusion :",
+                                        "pluginid": "39471",
+                                        "pluginname": "Web Application Tests Settings",
+                                        "preferencename": "URL for Remote File Inclusion :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "http://rfi.nessus.org/rfi.txt"
+                                    },
+                                    {
+                                        "fullname": "Web mirroring[entry]:Number of pages to mirror :",
+                                        "pluginid": "10662",
+                                        "pluginname": "Web mirroring",
+                                        "preferencename": "Number of pages to mirror :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "1000"
+                                    },
+                                    {
+                                        "fullname": "Web mirroring[entry]:Maximum depth :",
+                                        "pluginid": "10662",
+                                        "pluginname": "Web mirroring",
+                                        "preferencename": "Maximum depth :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "6"
+                                    },
+                                    {
+                                        "fullname": "Web mirroring[entry]:Start page :",
+                                        "pluginid": "10662",
+                                        "pluginname": "Web mirroring",
+                                        "preferencename": "Start page :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "/"
+                                    },
+                                    {
+                                        "fullname": "Web mirroring[entry]:Excluded items regex :",
+                                        "pluginid": "10662",
+                                        "pluginname": "Web mirroring",
+                                        "preferencename": "Excluded items regex :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "/server_privileges\\.php|logout"
+                                    },
+                                    {
+                                        "fullname": "Web mirroring[checkbox]:Follow dynamic pages :",
+                                        "pluginid": "10662",
+                                        "pluginname": "Web mirroring",
+                                        "preferencename": "Follow dynamic pages :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Malicious Process Detection[file]:Additional MD5 hashes (optional) :",
+                                        "pluginid": "59275",
+                                        "pluginname": "Malicious Process Detection",
+                                        "preferencename": "Additional MD5 hashes (optional) :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Malicious Process Detection[file]:Known good MD5 hashes (optional) :",
+                                        "pluginid": "59275",
+                                        "pluginname": "Malicious Process Detection",
+                                        "preferencename": "Known good MD5 hashes (optional) :",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Wake-on-LAN[file]:List of MAC addresses for Wake-on-LAN:",
+                                        "pluginid": "52616",
+                                        "pluginname": "Wake-on-LAN",
+                                        "preferencename": "List of MAC addresses for Wake-on-LAN:",
+                                        "preferencetype": "file",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Wake-on-LAN[entry]:Time to wait (in minutes) for the systems to boot:",
+                                        "pluginid": "52616",
+                                        "pluginname": "Wake-on-LAN",
+                                        "preferencename": "Time to wait (in minutes) for the systems to boot:",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": "5"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: WSUS Server Settings[entry]:WSUS Server :",
+                                        "pluginid": "57031",
+                                        "pluginname": "Patch Management: WSUS Server Settings",
+                                        "preferencename": "WSUS Server :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: WSUS Server Settings[entry]:WSUS Port :",
+                                        "pluginid": "57031",
+                                        "pluginname": "Patch Management: WSUS Server Settings",
+                                        "preferencename": "WSUS Port :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: WSUS Server Settings[entry]:WSUS Username :",
+                                        "pluginid": "57031",
+                                        "pluginname": "Patch Management: WSUS Server Settings",
+                                        "preferencename": "WSUS Username :",
+                                        "preferencetype": "entry",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: WSUS Server Settings[password]:WSUS Password :",
+                                        "pluginid": "57031",
+                                        "pluginname": "Patch Management: WSUS Server Settings",
+                                        "preferencename": "WSUS Password :",
+                                        "preferencetype": "password",
+                                        "preferencevalues": null
+                                    },
+                                    {
+                                        "fullname": "Patch Management: WSUS Server Settings[checkbox]:SSL :",
+                                        "pluginid": "57031",
+                                        "pluginname": "Patch Management: WSUS Server Settings",
+                                        "preferencename": "SSL :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    },
+                                    {
+                                        "fullname": "Patch Management: WSUS Server Settings[checkbox]:Verify SSL Certificate :",
+                                        "pluginid": "57031",
+                                        "pluginname": "Patch Management: WSUS Server Settings",
+                                        "preferencename": "Verify SSL Certificate :",
+                                        "preferencetype": "checkbox",
+                                        "preferencevalues": "no"
+                                    }
+                                ]
+                            },
+                            "serverpreferences": {
+                                "preference": [
+                                    {
+                                        "name": "max_simult_tcp_sessions",
+                                        "value": "unlimited"
+                                    },
+                                    {
+                                        "name": "throttle_scan",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "name": "listen_address",
+                                        "value": "127.0.0.1"
+                                    },
+                                    {
+                                        "name": "slice_network_addresses",
+                                        "value": "no"
+                                    },
+                                    {
+                                        "name": "non_simult_ports",
+                                        "value": "139, 445, 3389"
+                                    },
+                                    {
+                                        "name": "max_checks",
+                                        "value": "5"
+                                    },
+                                    {
+                                        "name": "stop_scan_on_disconnect",
+                                        "value": "no"
+                                    },
+                                    {
+                                        "name": "report_crashes",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "name": "host.max_simult_tcp_sessions",
+                                        "value": "unlimited"
+                                    },
+                                    {
+                                        "name": "name",
+                                        "value": "basic network scan"
+                                    },
+                                    {
+                                        "name": "wizard.basic.scan type",
+                                        "value": "Internal"
+                                    },
+                                    {
+                                        "name": "optimize_test",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "name": "log_whole_attack",
+                                        "value": "no"
+                                    },
+                                    {
+                                        "name": "ssl_cipher_list",
+                                        "value": "strong"
+                                    },
+                                    {
+                                        "name": "cgi_path",
+                                        "value": "/cgi-bin:/scripts"
+                                    },
+                                    {
+                                        "name": "listen_port",
+                                        "value": "1241"
+                                    },
+                                    {
+                                        "name": "auto_update",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "name": "checks_read_timeout",
+                                        "value": "5"
+                                    },
+                                    {
+                                        "name": "plugins_timeout",
+                                        "value": "320"
+                                    },
+                                    {
+                                        "name": "auto_enable_dependencies",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "name": "safe_checks",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "name": "stop_scan_on_hang",
+                                        "value": "no"
+                                    },
+                                    {
+                                        "name": "allow_post_scan_editing",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "name": "visibility",
+                                        "value": "shared"
+                                    },
+                                    {
+                                        "name": "wizard_uuid",
+                                        "value": "731a8e52-3ea6-a291-ec0a-d2ff0619c19d7bd788d6be818b65"
+                                    },
+                                    {
+                                        "name": "max_hosts",
+                                        "value": "80"
+                                    },
+                                    {
+                                        "name": "reduce_connections_on_congestion",
+                                        "value": "no"
+                                    },
+                                    {
+                                        "name": "silent_dependencies",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "name": "port_range",
+                                        "value": "default"
+                                    },
+                                    {
+                                        "name": "feed_type",
+                                        "value": "HomeFeed"
+                                    },
+                                    {
+                                        "name": "xmlrpc_listen_port",
+                                        "value": "8443"
+                                    },
+                                    {
+                                        "name": "plugin_upload",
+                                        "value": "yes"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "policyid": "-1",
+                    "policyname": "basic network scan",
+                    "policyowner": "admin",
+                    "visibility": "shared"
+                }
+            }
+        },
+        "seq": "431927201",
+        "status": "OK"
+    }
+}

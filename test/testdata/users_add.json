@@ -1,1 +1,13 @@
-{"reply" : {"seq" : "1033203104", "status" : "OK", "contents" : {"user" : {"idx" : "666537a3dd9683c9c459dc46b84ef7c8", "name" : "adm12", "admin" : "FALSE" } } }}
+{
+    "reply": {
+        "contents": {
+            "user": {
+                "admin": "FALSE",
+                "idx": "666537a3dd9683c9c459dc46b84ef7c8",
+                "name": "adm12"
+            }
+        },
+        "seq": "1033203104",
+        "status": "OK"
+    }
+}

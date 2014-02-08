@@ -156,6 +156,21 @@ class TestNessus(unittest.TestCase):
     self.assertTrue('admin' in user)
     self.assertTrue('name' in user)
 
+  def test_list_policies(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('policy_list')
+    policies = self._nessus.ListPolicies()
+    self.assertEqual(1, len(policies), policies)
+
+  def test_new_scan(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('scan_new')
+    scan = self._nessus.NewScan(['target1', 'target2'], '42', 'scan name')
+    self.assertTrue('uuid' in scan, scan)
+
+  def test_list_reports(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('report_list')
+    reports = self._nessus.ListReports()
+    self.assertTrue('report' in reports)
+
 
 if __name__ == "__main__":
   logging.basicConfig(
