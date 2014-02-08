@@ -150,6 +150,12 @@ class TestNessus(unittest.TestCase):
     plugins = self._nessus.ListPluginsInFamily('I am not a valid family')
     self.assertEqual([], plugins)
 
+  def test_add_user(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('users_add')
+    user = self._nessus.AddUser('username', 'pass', True)
+    self.assertTrue('admin' in user)
+    self.assertTrue('name' in user)
+
 
 if __name__ == "__main__":
   logging.basicConfig(

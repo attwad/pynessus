@@ -19,7 +19,7 @@ import random
 import urllib
 
 HOST = 'https://127.0.0.1:8443'
-MAX_SEQ = 2 ** 31 - 1
+_MAX_SEQ = 2 ** 31 - 1
 
 
 class NessusError(Exception):
@@ -132,7 +132,7 @@ class Nessus(object):
     data = {
       'login': login,
       'password': password,
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/login', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -160,7 +160,7 @@ class Nessus(object):
 
   def Logout(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/logout', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -183,7 +183,7 @@ class Nessus(object):
 
   def Feed(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/feed', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -196,7 +196,7 @@ class Nessus(object):
 
   def ListServerSettings(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/server/securesettings/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -219,7 +219,7 @@ class Nessus(object):
 
   def PluginsDescriptions(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/plugins/descriptions', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -233,7 +233,7 @@ class Nessus(object):
   
   def ListPreferences(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/server/preferences/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -254,7 +254,7 @@ class Nessus(object):
 
   def ServerLoad(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/server/load', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -273,7 +273,7 @@ class Nessus(object):
 
   def ServerUUID(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/uuid', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -292,7 +292,7 @@ class Nessus(object):
 
   def ServerCert(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/getcert', data)
     future = self._executor.submit(self._SendRawRequest, request, self._dump_path)
@@ -311,7 +311,7 @@ class Nessus(object):
 
   def ListPlugins(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/plugins/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -332,7 +332,7 @@ class Nessus(object):
 
   def ListPluginsAttributes(self, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
     }
     request = self._BuildRequest('/plugins/attributes/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
@@ -351,7 +351,7 @@ class Nessus(object):
 
   def ListPluginsInFamily(self, family, callback=None):
     data = {
-      'seq': random.randint(1, MAX_SEQ),
+      'seq': random.randint(1, _MAX_SEQ),
       'family': family,
     }
     request = self._BuildRequest('/plugins/list/family', data)
@@ -371,6 +371,28 @@ class Nessus(object):
       return contents['pluginlist']['plugin']
     return []
 
+  def AddUser(self, login, password, admin=False, callback=None):
+    data = {
+      'seq': random.randint(1, _MAX_SEQ),
+      'login': login,
+      'password': password,
+      'admin': 1 if admin else 0,
+    }
+    request = self._BuildRequest('/users/add', data)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
+    if callback:
+      future.add_done_callback(
+          functools.partial(self._AddUserDone, callback))
+      return future
+    else:
+      futures.wait([future])
+      return self._AddUserDone(callback, future)
+
+  @staticmethod
+  @FutureCallback
+  def _AddUserDone(callback, contents):
+    return contents['user']
+
 
 if __name__ == '__main__':
   logging.basicConfig(
@@ -381,7 +403,7 @@ if __name__ == '__main__':
   def callback(status):
     logging.info('Future finished: %s', status)
   with Nessus(HOST, dump_path='C:\\Users\\Tmu\\Desktop\\tmp') as nessus:
-    #nessus.Login('admin', 'simplerpass')
+    nessus.Login('admin', 'simplerpass')
     #logging.info('Feed: %s', nessus.Feed())
     #logging.info('Server settings: %s', nessus.ListServerSettings())
     #plugins = nessus.PluginsDescriptions()
@@ -391,4 +413,5 @@ if __name__ == '__main__':
     #logging.info(nessus.ServerCert())
     #logging.info(nessus.ListPlugins())
     #logging.info(nessus.ListPluginsAttributes())
-    logging.info(nessus.ListPluginsInFamily('General'))
+    #logging.info(nessus.ListPluginsInFamily('General'))
+    #logging.info(nessus.AddUser('adm12', 'testpass', False))
