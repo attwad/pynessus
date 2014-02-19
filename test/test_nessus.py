@@ -48,6 +48,7 @@ class TestNessus(unittest.TestCase):
     futures.wait([future])
     self.assertTrue(self._nessus.is_logged_in)
     self.assertTrue(future.done())
+    callback.assert_called_once_with(mock.ANY)
 
   def test_invalid_login(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile('invalid_login')
@@ -144,6 +145,14 @@ class TestNessus(unittest.TestCase):
     plugins = self._nessus.ListPluginsInFamily('General')
     self.assertEqual(164, len(plugins), plugins)
 
+  def test_list_plugins_in_familly_async_fails(self, mock_urlopen):
+    mock_urlopen.side_effect = Exception('something went wrong')
+    callback = mock.Mock(return_value=None)
+    future = self._nessus.ListPluginsInFamily('General', callback)
+    futures.wait([future])
+    self.assertTrue(future.done())
+    callback.assert_called_once_with(None, error=mock.ANY)
+
   def test_list_plugins_in_family_wrong_family(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile(
         'plugins_list_family_null')
@@ -170,6 +179,10 @@ class TestNessus(unittest.TestCase):
     mock_urlopen.return_value = self._ExpectResponseFromFile('report_list')
     reports = self._nessus.ListReports()
     self.assertTrue('report' in reports)
+
+  def test_get_report(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('file_report_download')
+    self.assertTrue(self._nessus.GetReport(uuid='some uuid'))
 
 
 if __name__ == "__main__":

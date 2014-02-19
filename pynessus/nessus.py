@@ -7,6 +7,19 @@ Example usage:
   with Nessus('127.0.0.1:8443') as nes:
     nes.Login('admin', 'pass$%&(#'%#[]@:')
     logging.info('Feeds: %s', nes.Feed())
+
+All calls can be done asynchronously:
+
+  with Nessus('127.0.0.1:8443') as nes:
+    def LoginCallback(result, error=None):
+      if error:
+        logging.warning('Error while logging: %s', error)
+        return
+      logging.info('Correcty logged in: %s', result)
+
+    future = nes.Login('admin', 'pass$%&(#'%#[]@:', callback=LoginCallback)
+    futures.wait([future])
+    # At this point the LoginCallback is sure to have been called.
 """
 
 from concurrent import futures
@@ -37,7 +50,11 @@ def FutureCallback(fn):
         futures.CancelledError,
         futures.TimeoutError,
         Exception) as e:
-      raise NessusError(e)
+      if callback:
+        callback(None, error=NessusError(e))
+        return
+      else:
+        raise NessusError(e)
     return fn(callback, contents)
   return wrapper
 
@@ -60,9 +77,28 @@ def SelfFutureCallback(fn):
 class Nessus(object):
   """Class to communicate with the remote nessus 5 instance.
   All methods support both synchronous and asynchronous calls.
+  If synchronous calls are made, the returned values are the values from Nessus.
+  If asynchronous cals are made, the returned value is a future that should be
+  waited for using futures.wait([returned_future]) and the callback passed to
+  the functions all have the same parameters:
+  def Callback(result, error=None):
+    pass
+  If an error happened during the future execution, then result will be None
+  and error will be an Exception (most likely a NessusError instance).
   """
 
   def __init__(self, host, executor=None, dump_path=None):
+    """Initializes the Nessus instance.
+    Does not connect on creation, this is a dumb constructor only,
+    to connect call Login(...).
+
+    Args:
+      host: The host:port to connect to.
+      executor: A concurrent.futures.Executor to use, if left unspecified a default
+          ThreadPoolExecutor will be used with 5 parallel workers.
+      dump_path: If specified all responses from nessus will be dumped to this
+          path.
+    """
     self._host = host
     self._session_token = None
     self._executor = executor or futures.ThreadPoolExecutor(max_workers=5)
@@ -72,6 +108,7 @@ class Nessus(object):
     return self
 
   def __exit__(self, type, value, traceback):
+    """Exits a with: statement, automatically log out of nessus if connected."""
     if self._session_token:
       self.Logout()
 
@@ -84,7 +121,8 @@ class Nessus(object):
       data = data.encode('utf-8')
       request.data = data
     if self._session_token:
-      # TODO: dangerous.
+      # We are getting the header from nessus, so we should be fine against
+      # header splitting attacks.
       request.add_header('Cookie', 'token=%s' % self._session_token)
     return request
 
@@ -495,8 +533,7 @@ if __name__ == '__main__':
     #logging.info(nessus.ListPluginsAttributes())
     #logging.info(nessus.ListPluginsInFamily('General'))
     #logging.info(nessus.AddUser('adm12', 'testpass', False))
-    #TODO(timothe): add policy list/add
     #logging.info(nessus.ListPolicies())
     #logging.info(nessus.NewScan(['192.168.0.1'], '-1', 'localhost scan'))
     #logging.info(nessus.ListReports())
-    logging.info(nessus.GetReport("f4f71476-9297-49be-76ed-bac6c4d890ee110ef9d2c656c3a0"))
+    #logging.info(nessus.GetReport("f4f71476-9297-49be-76ed-bac6c4d890ee110ef9d2c656c3a0"))
