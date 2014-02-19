@@ -11,6 +11,7 @@ Example usage
 -------------
 
 .. code-block:: python
+
   with Nessus('127.0.0.1:8443') as nes:
     nes.Login('admin', 'pass$%&(#'%#[]@:')
     logging.info('Feeds: %s', nes.Feed())
@@ -18,6 +19,7 @@ Example usage
 All calls can be done asynchronously:
 
 .. code-block:: python
+
   with Nessus('127.0.0.1:8443') as nes:
     def LoginCallback(result, error=None):
       if error:
