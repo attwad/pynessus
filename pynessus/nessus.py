@@ -1,7 +1,7 @@
 """Library to talk with a remote Nessus 5 server that via its xmlrpc interface,
 
 Methods mirror what is in the official API at
-file:///C:/Users/Tmu/Desktop/nessus/nessus_5.0_XMLRPC_protocol_guide.pdf
+http://static.tenable.com/documentation/nessus_5.0_XMLRPC_protocol_guide.pdf
 
 Example usage:
   with Nessus('127.0.0.1:8443') as nes:
@@ -31,7 +31,6 @@ import os
 import random
 import urllib
 
-HOST = 'https://127.0.0.1:8443'
 _MAX_SEQ = 2 ** 31 - 1
 
 
@@ -174,12 +173,15 @@ class Nessus(object):
     }
     request = self._BuildRequest('/login', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(functools.partial(self._LoginDone, callback))
+    return self._ProcessFutureCallback(future, callback, self._LoginDone)
+
+  def _ProcessFutureCallback(self, future, user_callback, self_callback):
+    if user_callback:
+      future.add_done_callback(functools.partial(self_callback, user_callback))
       return future
     else:
       futures.wait([future])
-      return self._LoginDone(callback, future)
+      return self_callback(user_callback, future)
 
   @SelfFutureCallback
   def _LoginDone(self, callback, contents):
@@ -202,12 +204,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/logout', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(functools.partial(self._LogoutDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._LogoutDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._LogoutDone)
 
   @SelfFutureCallback
   def _LogoutDone(self, callback, content):
@@ -225,12 +222,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/feed', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(functools.partial(self._SimpleReturnCB, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._SimpleReturnCB(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._SimpleReturnCB)
 
   def ListServerSettings(self, callback=None):
     data = {
@@ -238,13 +230,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/server/securesettings/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ListServerSettingsDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ListServerSettingsDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ListServerSettingsDone)
 
   @staticmethod
   @FutureCallback
@@ -261,13 +247,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/plugins/descriptions', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._SimpleReturnCB, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._SimpleReturnCB(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._SimpleReturnCB)
   
   def ListPreferences(self, callback=None):
     data = {
@@ -275,13 +255,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/server/preferences/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ListPreferencesDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ListPreferencesDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ListPreferencesDone)
 
   @staticmethod
   @FutureCallback
@@ -296,13 +270,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/server/load', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ServerLoadDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ServerLoadDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ServerLoadDone)
 
   @staticmethod
   @FutureCallback
@@ -315,13 +283,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/uuid', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ServerUUIDDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ServerUUIDDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ServerUUIDDone)
 
   @staticmethod
   @FutureCallback
@@ -334,13 +296,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/getcert', data)
     future = self._executor.submit(self._SendRawRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ServerCertDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ServerCertDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ServerCertDone)
 
   @staticmethod
   @FutureCallback
@@ -353,13 +309,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/plugins/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ListPluginsDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ListPluginsDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ListPluginsDone)
 
   @staticmethod
   @FutureCallback
@@ -374,13 +324,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/plugins/attributes/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ListPluginsAttributesDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ListPluginsAttributesDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ListPluginsAttributesDone)
 
   @staticmethod
   @FutureCallback
@@ -394,13 +338,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/plugins/list/family', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ListPluginsInFamilyDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ListPluginsInFamilyDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ListPluginsInFamilyDone)
 
   @staticmethod
   @FutureCallback
@@ -418,17 +356,41 @@ class Nessus(object):
     }
     request = self._BuildRequest('/users/add', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._AddUserDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._AddUserDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._AddUserDone)
 
   @staticmethod
   @FutureCallback
   def _AddUserDone(callback, contents):
+    return contents['user']
+
+  def DeleteUser(self, login, callback=None):
+    data = {
+      'seq': random.randint(1, _MAX_SEQ),
+      'login': login,
+    }
+    request = self._BuildRequest('/users/delete', data)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
+    return self._ProcessFutureCallback(future, callback, self._DeleteUserDone)
+
+  @staticmethod
+  @FutureCallback
+  def _DeleteUserDone(callback, contents):
+    return contents['user']['name']
+
+  def EditUser(self, login, password, admin=False, callback=None):
+    data = {
+      'seq': random.randint(1, _MAX_SEQ),
+      'login': login,
+      'password': password,
+      'admin': 1 if admin else 0,
+    }
+    request = self._BuildRequest('/users/edit', data)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
+    return self._ProcessFutureCallback(future, callback, self._EditUserDone)
+
+  @staticmethod
+  @FutureCallback
+  def _EditUserDone(callback, contents):
     return contents['user']
 
   def ListPolicies(self, callback=None):
@@ -437,13 +399,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/policy/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ListPoliciesDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ListPoliciesDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ListPoliciesDone)
 
   @staticmethod
   @FutureCallback
@@ -459,13 +415,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/scan/new', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._NewScanDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._NewScanDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._NewScanDone)
 
   @staticmethod
   @FutureCallback
@@ -478,13 +428,7 @@ class Nessus(object):
     }
     request = self._BuildRequest('/report/list', data)
     future = self._executor.submit(self._SendRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._ListReportsDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._ListReportsDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._ListReportsDone)
 
   @staticmethod
   @FutureCallback
@@ -498,42 +442,22 @@ class Nessus(object):
     }
     request = self._BuildRequest('/file/report/download', data)
     future = self._executor.submit(self._SendRawRequest, request, self._dump_path)
-    if callback:
-      future.add_done_callback(
-          functools.partial(self._GetReportDone, callback))
-      return future
-    else:
-      futures.wait([future])
-      return self._GetReportDone(callback, future)
+    return self._ProcessFutureCallback(future, callback, self._GetReportDone)
 
   @staticmethod
   @FutureCallback
   def _GetReportDone(callback, contents):
     return contents
 
+  def ServerUpdate(self, callback=None):
+    data = {
+      'seq': random.randint(1, _MAX_SEQ),
+    }
+    request = self._BuildRequest('/server/update', data)
+    future = self._executor.submit(self._SendRequest, request, self._dump_path)
+    return self._ProcessFutureCallback(future, callback, self._ServerUpdateDone)
 
-if __name__ == '__main__':
-  logging.basicConfig(
-      level=logging.DEBUG,
-      format='[%(levelname)s] (%(threadName)-10s) %(message)s',
-  )
-
-  def callback(status):
-    logging.info('Future finished: %s', status)
-  with Nessus(HOST, dump_path='C:\\Users\\Tmu\\Desktop\\tmp') as nessus:
-    nessus.Login('admin', 'simplerpass')
-    #logging.info('Feed: %s', nessus.Feed())
-    #logging.info('Server settings: %s', nessus.ListServerSettings())
-    #plugins = nessus.PluginsDescriptions()
-    #logging.info(nessus.ListPreferences())
-    #logging.info(nessus.ServerLoad())
-    #logging.info(nessus.ServerUUID())
-    #logging.info(nessus.ServerCert())
-    #logging.info(nessus.ListPlugins())
-    #logging.info(nessus.ListPluginsAttributes())
-    #logging.info(nessus.ListPluginsInFamily('General'))
-    #logging.info(nessus.AddUser('adm12', 'testpass', False))
-    #logging.info(nessus.ListPolicies())
-    #logging.info(nessus.NewScan(['192.168.0.1'], '-1', 'localhost scan'))
-    #logging.info(nessus.ListReports())
-    #logging.info(nessus.GetReport("f4f71476-9297-49be-76ed-bac6c4d890ee110ef9d2c656c3a0"))
+  @staticmethod
+  @FutureCallback
+  def _ServerUpdateDone(callback, contents):
+    return contents

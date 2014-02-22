@@ -165,6 +165,18 @@ class TestNessus(unittest.TestCase):
     self.assertTrue('admin' in user)
     self.assertTrue('name' in user)
 
+  def test_delete_user(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('users_delete')
+    user = self._nessus.DeleteUser('username')
+    self.assertTrue('username' in user, user)
+
+  def test_edit_user(self, mock_urlopen):
+    mock_urlopen.return_value = self._ExpectResponseFromFile('users_edit')
+    user = self._nessus.EditUser('username', 'newpass', True)
+    self.assertEqual('username', user['name'], user)
+    self.assertFalse('newpass' in user, user)
+    self.assertTrue('admin' in user, user)
+
   def test_list_policies(self, mock_urlopen):
     mock_urlopen.return_value = self._ExpectResponseFromFile('policy_list')
     policies = self._nessus.ListPolicies()
