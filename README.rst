@@ -22,7 +22,7 @@ Example usage
     nes.Login('admin', 'pass$%&(#'%#[]@:')
     logging.info('Feeds: %s', nes.Feed())
 
-All calls can be done asynchronously:
+All calls can also be done asynchronously if needed:
 
 .. code-block:: python
 
