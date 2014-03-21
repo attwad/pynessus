@@ -10,7 +10,7 @@ except ImportError:
 
 setup(
     name='pynessus',
-    version='0.9',
+    version='0.9.1',
     author='attwad',
     author_email='tmusoft@gmail.com',
     description=(
