@@ -8,6 +8,9 @@ Methods mirror what is in the official API at
 http://static.tenable.com/documentation/nessus_5.0_XMLRPC_protocol_guide.pdf
 in a pythonic way so that you don't have to care about json or xml.
 
+.. image:: https://travis-ci.org/attwad/pynessus.svg?branch=master
+    :target: https://travis-ci.org/attwad/pynessus
+
 Ongoing work
 ------------
 Features are being added, not all the API is mapped yet.
