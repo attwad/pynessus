@@ -40,3 +40,8 @@ All calls can also be done asynchronously if needed:
     future = nes.Login('admin', 'pass$%&(#\'%#[]@:', callback=LoginCallback)
     futures.wait([future])
     # At this point the LoginCallback is sure to have been called.
+
+License
+-------
+
+Unlicensed, do what you want. (http://unlicense.org/)
